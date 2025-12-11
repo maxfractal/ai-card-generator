@@ -80,7 +80,9 @@ $is_authenticated = isset($_SESSION['authenticated']) && $_SESSION['authenticate
           <li><a href="./aws/index.html">Amazon Web Services</a></li>
           <li><a href="./cogstate/lila/index.html">Cogstate Mobile App</a></li>
           <li><a href="./cogstate/islt/index.html">Improving UX for Cognitive Testing in Clinical Trials</a></li>
+          <!--
           <li><a href="./etouches/eselect/">eSelect: Academic Call for Papers Tool</a></li>
+            -->
         </ul>
       </div>
       <div class="portfolio">
