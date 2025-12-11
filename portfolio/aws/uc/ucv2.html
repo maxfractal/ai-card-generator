@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AWS Utility Centers – Case Study | Chris Parsell</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <style>
+    :root{ --bg:#0b0d12; --panel:#12151d; --ink:#e7ecf3; --muted:#9aa3af; --accent:#22d3ee; --line:#1e2230; }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0; font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans"; background:var(--bg); color:var(--ink)}
+    .wrap{max-width:1100px; margin:0 auto; padding:32px 20px 96px}
+    header.hero{display:grid; grid-template-columns:1.2fr .8fr; gap:28px; align-items:center}
+    .eyebrow{letter-spacing:.12em; text-transform:uppercase; color:var(--accent); font-weight:700; font-size:12px}
+    h1{font-family:"Bebas Neue", Inter, sans-serif; letter-spacing:.02em; font-size:64px; line-height:.92; margin:10px 0 12px}
+    .lede{font-size:18px; color:var(--muted); line-height:1.7}
+    .panel{background:var(--panel); border:1px solid var(--line); border-radius:18px; padding:20px}
+    .tag{display:inline-block; padding:.35rem .6rem; border:1px solid var(--line); border-radius:999px; color:var(--muted); margin:.2rem .25rem .2rem 0; font-size:12px}
+    .grid{display:grid; gap:18px}
+    .g-2{grid-template-columns:1fr 1fr}
+    .g-3{grid-template-columns:repeat(3,1fr)}
+    h2{font-size:28px; margin:28px 0 12px}
+    h3{font-size:18px; margin:20px 0 8px; color:var(--ink)}
+    p{color:#c7d0dc; line-height:1.8; font-size:15.5px}
+    ul{margin:0; padding-left:18px; color:#c7d0dc}
+    li{margin:6px 0}
+    .kv{height:100%; min-height:220px; border-radius:18px; background:linear-gradient(135deg,#101521 0%,#121826 55%,#0b1220 100%); border:1px solid var(--line); display:flex; align-items:center; justify-content:center; text-align:center; padding:20px}
+    .kv h2{margin:0; font-size:44px}
+    .badge{display:inline-flex; align-items:center; gap:8px; padding:10px 12px; border:1px solid var(--line); border-radius:12px; color:#d1e7f8; background:#0e1420}
+    .meta{display:flex; flex-wrap:wrap; gap:10px}
+    .callout{border-left:3px solid var(--accent); padding-left:14px; margin:12px 0}
+    .quote{font-size:16px; color:#d6e2f1; line-height:1.7}
+    .by{color:var(--muted); font-size:13px}
+    .cols{columns:2; column-gap:22px}
+    @media (max-width:980px){header.hero{grid-template-columns:1fr} .g-2,.g-3{grid-template-columns:1fr} .cols{columns:1}}
+    a.cta{display:inline-block; margin-top:10px; color:var(--bg); background:var(--accent); padding:10px 14px; border-radius:10px; font-weight:700; text-decoration:none}
+    footer{margin-top:48px; color:var(--muted); font-size:13px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+      <div>
+        <div class="eyebrow">Case Study</div>
+        <h1>AWS Utility Centers — Role‑Based Dashboards in the Console</h1>
+        <p class="lede">A new, role-based dashboard experience for Billing, Compliance, and DevOps that gives customers one‑click access to essential utility services—so they can monitor costs, troubleshoot pipelines, and scale environments without hopping across 200+ consoles.</p>
+        <div class="meta">
+          <span class="badge">Role: Product Manager · UX Lead</span>
+          <span class="badge">Org: AWS Platform</span>
+          <span class="badge">Scope: Multi‑dashboard Console feature</span>
+          <span class="badge">Date: Apr 4, 2023</span>
+        </div>
+        <div style="margin-top:12px">
+          <span class="tag">Role‑Based UX</span>
+          <span class="tag">Dashboards</span>
+          <span class="tag">Live Operations</span>
+          <span class="tag">Cost & Compliance</span>
+          <span class="tag">DevOps</span>
+        </div>
+      </div>
+      <div class="kv">
+        <div>
+          <h2 style="font-family:'Bebas Neue',Inter,sans-serif; letter-spacing:.03em;">Work the Way You Work</h2>
+          <p style="color:#aab6c5; margin:8px 0 0">Seven pre‑built Utility Centers group frequently connected services by job function—so customers act from a single screen with a uniform, consistent look and feel.</p>
+        </div>
+      </div>
+    </header>
+
+    <section class="grid g-2" style="margin-top:28px">
+      <div class="panel">
+        <h2>Problem</h2>
+        <p>With 200+ AWS services, customers had to stitch together multiple consoles to accomplish what felt like a single, role‑based task. For example, continuous delivery required touching CodePipeline, CodeBuild, and CodeDeploy—slowing teams and introducing risk.</p>
+        <div class="callout">
+          <div class="quote">“Customers love our services, but they want to access them in a similar way to how they work.”</div>
+          <div class="by">— Kurt Kufeld, VP, AWS Platform</div>
+        </div>
+      </div>
+      <div class="panel">
+        <h2>Outcome</h2>
+        <ul>
+          <li>Introduced <strong>Utility Centers</strong>: role‑specific dashboards for Billing, Compliance, DevOps, and more.</li>
+          <li><strong>One‑click access</strong> to essential utility services for analyzing, configuring, and maintaining applications.</li>
+          <li>Uniform UI across centers; <strong>grouped services by job function</strong> to reduce hunting and context switching.</li>
+          <li>Launched seven pre‑built dashboards accessible from the Services menu.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="panel" style="margin-top:18px">
+      <h2>My Role</h2>
+      <div class="cols">
+        <p><strong>Product strategy:</strong> Positioned Utility Centers as a role‑based operating layer; defined success metrics (task completion, time‑to‑resolution, feature adoption).</p>
+        <p><strong>Experience lead:</strong> Co‑created dashboard IA, card patterns, and action models to keep users in‑flow; ensured a consistent, Console‑native visual language.</p>
+        <p><strong>Cross‑functional facilitation:</strong> Partnered with Product, Strategy, and Data & Analytics to prioritize use cases (cost monitoring, CI/CD troubleshooting, compliance posture).</p>
+        <p><strong>Launch storytelling:</strong> Authored announcement narrative and demo flows; prepared executive and publisher readouts; aligned GTM with partner teams.</p>
+      </div>
+    </section>
+
+    <section class="grid g-3" style="margin-top:18px">
+      <div class="panel">
+        <h3>Users & Jobs</h3>
+        <ul>
+          <li><strong>DevOps</strong>: troubleshoot CI/CD, view pipeline health, and take action from one screen.</li>
+          <li><strong>Finance/Billing</strong>: monitor storage and compute costs; forecast and allocate.</li>
+          <li><strong>Security/Compliance</strong>: assess posture, surface violations, and remediate quickly.</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3>Insights</h3>
+        <ul>
+          <li>People think in <em>jobs</em>, not services—dashboards must reflect role intent.</li>
+          <li>Grouping frequently connected services reduces time‑to‑action and errors.</li>
+          <li>Uniform patterns across centers lower learning curve and increase adoption.</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3>Principles</h3>
+        <ul>
+          <li><strong>Start from the job.</strong> Design for role goals first.</li>
+          <li><strong>Keep users in‑flow.</strong> Inline actions and deep links, not hop‑outs.</li>
+          <li><strong>Consistency over novelty.</strong> A shared, Console‑native pattern library.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="panel" style="margin-top:18px">
+      <h2>Experience Highlights</h2>
+      <div class="grid g-2">
+        <div>
+          <h3>Role‑Based Grouping</h3>
+          <p>Each Utility Center clusters the most relevant services, metrics, and quick actions for that role—e.g., DevOps sees pipeline status and deployment actions; Billing sees top cost drivers and anomaly alerts.</p>
+          <h3>Uniform Interactions</h3>
+          <p>Cards, filters, and tables follow a shared pattern library so teams can move between centers without relearning controls.</p>
+        </div>
+        <div>
+          <h3>Actionable Dashboards</h3>
+          <p>Not just read‑only: users trigger common workflows (scale up, pause pipeline, open budget drill‑down) directly from the dashboard.</p>
+          <h3>Seven Pre‑Built Centers</h3>
+          <p>Accessible from the Services menu; designed to be extensible as new roles or utility areas emerge.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel" style="margin-top:18px">
+      <h2>Impact & Signals</h2>
+      <ul>
+        <li><strong>Time‑to‑Action ↓</strong> by reducing console hops across related services.</li>
+        <li><strong>Task Completion ↑</strong> through inline actions and deep links for common jobs.</li>
+        <li><strong>Adoption ↑</strong> driven by uniform, role‑based patterns and discoverability from the Services menu.</li>
+      </ul>
+    </section>
+
+    <section class="grid g-2" style="margin-top:18px">
+      <div class="panel">
+        <h2>Customer Voice</h2>
+        <div class="callout">
+          <div class="quote">“With the DevOps Utility Center, we located a pipeline issue and took action from one dashboard—saving time and effort.”</div>
+          <div class="by">— Omri Sass, Group PM, APM, Liberty Mutual</div>
+        </div>
+        <div class="callout">
+          <div class="quote">“We now have an easy, intuitive single source for understanding application costs.”</div>
+          <div class="by">— Renato Baldo, IT Budget Organization & Processing Manager</div>
+        </div>
+      </div>
+      <div class="panel">
+        <h2>Artifacts</h2>
+        <ul>
+          <li>Announcement press release & PRFAQ</li>
+          <li>Dashboard IA, wireframes, and interaction specs</li>
+          <li>Pattern library updates for shared components</li>
+          <li>Executive narrative, demo scripts, and GTM enablement</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="panel" style="margin-top:18px">
+      <h2>What I’d Evolve Next</h2>
+      <ul>
+        <li><strong>Personalized modules</strong> by role + account context (recent activity, anomalies, ownership).</li>
+        <li><strong>Pluggable cards</strong> marketplace so service teams can publish role‑aware widgets.</li>
+        <li><strong>Observability</strong> for dashboard quality (usage, time‑to‑action, retention by role).</li>
+      </ul>
+      <a class="cta" href="#" onclick="alert('In a live portfolio, this would open wireframes and a deeper dive.')">View Wireframes & Flows</a>
+    </section>
+<!-- ============================= -->
+<!--  Utility Centers Gallery      -->
+<!-- ============================= -->
+
+<section class="panel" style="margin-top:28px">
+  <h2>Utility Centers — Visual Walkthrough</h2>
+  <p style="color:#aab6c5; font-size:15px; margin-bottom:16px">
+    A visual progression through the Utility Centers dashboards — from early wireframes to the final role-based experience.
+  </p>
+
+  <!-- Image 1 -->
+  <div style="margin-bottom:32px;">
+    <img src="assets/images/UC1.00_01_10_02.Still001.png" alt="Utility Center Dashboard 1" style="width:100%; border-radius:12px;">
+    <p style="color:#9aa3af; font-size:14px;">1. Initial dashboard concept layout showing navigation and role grouping.</p>
+    <a href="assets/images/UC1.00_01_10_02.Still001.png" target="_blank" style="color:#22d3ee;">View full size</a>
+  </div>
+
+  <!-- Image 2 -->
+  <div style="margin-bottom:32px;">
+    <img src="assets/images/UC1.00_01_07_29.Still002.png" alt="Utility Center Dashboard 2" style="width:100%; border-radius:12px;">
+    <p style="color:#9aa3af; font-size:14px;">2. Role-specific modules surfaced for Billing, Compliance, and DevOps use cases.</p>
+    <a href="assets/images/UC1.00_01_07_29.Still002.png" target="_blank" style="color:#22d3ee;">View full size</a>
+  </div>
+
+  <!-- Image 3 -->
+  <div style="margin-bottom:32px;">
+    <img src="assets/images/uc_03.webp" alt="Utility Center Dashboard 3" style="width:100%; border-radius:12px;">
+    <p style="color:#9aa3af; font-size:14px;">3. Refined card grid showing live metrics and actionable insights.</p>
+    <a href="assets/images/uc_03.webp" target="_blank" style="color:#22d3ee;">View full size</a>
+  </div>
+
+  <!-- Image 4–15 -->
+  <!-- Repeat pattern for each image -->
+  <!-- You can replace these captions with real descriptions if desired -->
+  <div style="margin-bottom:32px;">
+    <img src="assets/images/uc_04.webp" alt="Utility Center Dashboard 4" style="width:100%; border-radius:12px;">
+    <p style="color:#9aa3af; font-size:14px;">4. Expanded view of DevOps pipeline monitoring module.</p>
+    <a href="assets/images/uc_04.webp" target="_blank" style="color:#22d3ee;">View full size</a>
+  </div>
+
+  <div style="margin-bottom:32px;">
+    <img src="assets/images/UC1.00_01_17_20.Still005.png" alt="Utility Center Dashboard 5" style="width:100%; border-radius:12px;">
+    <p style="color:#9aa3af; font-size:14px;">5. Billing summary cards and cost anomaly alerts.</p>
+    <a href="assets/images/UC1.00_01_17_20.Still005.png" target="_blank" style="color:#22d3ee;">View full size</a>
+  </div>
+    <section class="grid g-2">
+      <div class="panel">
+        <h2>Fintech Walkthrough</h2>
+        <ul>
+          <li>Olympics PX component library & partner templates</li>
+          <li>Live/VOD navigation wireframes and flows</li>
+          <li>Connector metadata schema & mapping rules</li>
+          <li>Artwork automation dashboards & QA scripts</li>
+        </ul>
+        <a class="tag" href="#">View components</a>
+        <a class="tag" href="#">View flows</a>
+      </div>
+      <div class="panel">
+        <h2>Shirley's Pain Points</h2>
+        <ul>
+          <li>Comcast Xfinity — Olympics hub hero + Up Next</li>
+          <li>Verizon Fios — event trays & replay entry points</li>
+          <li>Dish & Sling — pictograms and highlights rail</li>
+        </ul>
+        <a class="tag" href="#">Open gallery</a>
+      </div>
+    </section>
+  <div style="margin-bottom:32px;">
+    <img src="assets/images/UC1.00_01_32_04.Still006.png" alt="Utility Center Dashboard 6" style="width:100%; border-radius:12px;">
+    <p style="color:#9aa3af; font-size:14px;">6. Compliance overview with quick actions for remediation.</p>
+    <a href="assets/images/UC1.00_01_32_04.Still006.png" target="_blank" style="color:#22d3ee;">View full size</a>
+  </div>
+
+  <div style="margin-bottom:32px;">
+    <img src="assets/images/UC1.00_01_33_12.Still007.png" alt="Utility Center Dashboard 7" style="width:100%; border-radius:12px;">
+    <p style="color:#9aa3af; font-size:14px;">7. Service health integration and cross-role insights.</p>
+    <a href="assets/images/UC1.00_01_33_12.Still007.png" target="_blank" style="color:#22d3ee;">View full size</a>
+  </div>
+
+  <div style="margin-bottom:32px;">
+    <img src="assets/images/uc_08.webp" alt="Utility Center Dashboard 8" style="width:100%; border-radius:12px;">
+    <p style="color:#9aa3af; font-size:14px;">8. Unified navigation shell for quick access across Centers.</p>
+    <a href="assets/images/uc_08.webp" target="_blank" style="color:#22d3ee;">View full size</a>
+  </div>
+
+  <div style="margin-bottom:32px;">
+    <img src="assets/images/uc_09.webp" alt="Utility Center Dashboard 9" style="width:100%; border-radius:12px;">
+    <p style="color:#9aa3af; font-size:14px;">9. Accessibility testing and visual refinement stage.</p>
+    <a href="assets/images/uc_09.webp" target="_blank" style="color:#22d3ee;">View full size</a>
+  </div>
+    <section class="grid g-2">
+      <div class="panel">
+        <h2>DevOps Walkthrough</h2>
+        <ul>
+          <li>Olympics PX component library & partner templates</li>
+          <li>Live/VOD navigation wireframes and flows</li>
+          <li>Connector metadata schema & mapping rules</li>
+          <li>Artwork automation dashboards & QA scripts</li>
+        </ul>
+        <a class="tag" href="#">View components</a>
+        <a class="tag" href="#">View flows</a>
+      </div>
+      <div class="panel">
+        <h2>Arnav's Pain Points</h2>
+        <ul>
+          <li>Comcast Xfinity — Olympics hub hero + Up Next</li>
+          <li>Verizon Fios — event trays & replay entry points</li>
+          <li>Dish & Sling — pictograms and highlights rail</li>
+        </ul>
+        <a class="tag" href="#">Open gallery</a>
+      </div>
+    </section>
+  <div style="margin-bottom:32px;">
+    <img src="assets/images/UC1.00_02_07_20.Still009.png" alt="Utility Center Dashboard 10" style="width:100%; border-radius:12px;">
+    <p style="color:#9aa3af; font-size:14px;">1. Arnav's first logging into the AWS management Console.</p>
+    <a href="assets/images/UC1.00_02_07_20.Still009.png" target="_blank" style="color:#22d3ee;">View full size</a>
+  </div>
+
+  <div style="margin-bottom:32px;">
+    <img src="assets/images/UC1.00_02_09_26.Still010.png" alt="Utility Center Dashboard 11" style="width:100%; border-radius:12px;">
+    <p style="color:#9aa3af; font-size:14px;">Arnav's customizied landing page.</p>
+    <a href="assets/images/UC1.00_02_09_26.Still010.png" target="_blank" style="color:#22d3ee;">View full size</a>
+  </div>
+
+  <div style="margin-bottom:32px;">
+    <img src="assets/images/UC1.00_02_16_02.Still011.png" alt="Utility Center Dashboard 12" style="width:100%; border-radius:12px;">
+    <p style="color:#9aa3af; font-size:14px;">Arnav's DevOps Dashboard.</p>
+    <a href="assets/images/UC1.00_02_16_02.Still011.png" target="_blank" style="color:#22d3ee;">View full size</a>
+  </div>
+
+  <div style="margin-bottom:32px;">
+    <img src="assets/images/UC1.00_02_42_02.Still013.png" alt="Utility Center Dashboard 13" style="width:100%; border-radius:12px;">
+    <p style="color:#9aa3af; font-size:14px;">One click access to critical documentattion.</p>
+    <a href="assets/images/UC1.00_02_42_02.Still013.png" target="_blank" style="color:#22d3ee;">View full size</a>
+  </div>
+
+  <div style="margin-bottom:32px;">
+    <img src="assets/images/UC1.00_03_02_06.Still015.webp" alt="Utility Center Dashboard 14" style="width:100%; border-radius:12px;">
+    <p style="color:#9aa3af; font-size:14px;">One click access to vital how-to's.</p>
+    <a href="assets/images/UC1.00_03_02_06.Still015.webp" target="_blank" style="color:#22d3ee;">View full size</a>
+  </div>
+
+ 
+
+    <footer>
+      © Chris Parsell — Portfolio Case Study. Prepared from AWS announcement content dated April 4, 2023.
+    </footer>
+  </div>
+</body>
+</html>

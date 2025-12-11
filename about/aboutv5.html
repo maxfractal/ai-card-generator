@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Chris Parsell – Senior Design Systems Manager (PX Guidelines)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --accent: #00aeef;
+      --bg: #ffffff;
+      --ink: #111827;
+      --muted: #6b7280;
+      --border-subtle: #e5e7eb;
+      --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+                   "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+                   "Liberation Mono", "Courier New", monospace;
+      --space-xs: 4px;
+      --space-sm: 8px;
+      --space-md: 16px;
+      --space-lg: 24px;
+      --space-xl: 32px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: #f3f4f6;
+      color: var(--ink);
+      font-family: var(--font-sans);
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      padding: var(--space-lg);
+    }
+
+    .page {
+      background: var(--bg);
+      max-width: 900px;
+      width: 100%;
+      padding: var(--space-lg) var(--space-xl);
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12);
+    }
+
+    @media print {
+      body {
+        padding: 0;
+        background: var(--bg);
+      }
+      .page {
+        box-shadow: none;
+        max-width: 100%;
+        width: 100%;
+        padding: 20mm 18mm;
+      }
+    }
+
+    /* Header bar */
+    .header-bar {
+      background: #020617;
+      color: #f9fafb;
+      padding: var(--space-md) var(--space-md);
+      margin: calc(-1 * var(--space-lg)) calc(-1 * var(--space-xl)) var(--space-lg);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-xs);
+    }
+
+    .header-top {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: var(--space-sm);
+    }
+
+    .name {
+      font-size: 1.6rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+
+    .role {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: rgba(248, 250, 252, 0.85);
+    }
+
+    .contact {
+      font-size: 0.85rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: flex-start;
+    }
+
+    .contact span::before {
+      content: "•";
+      margin-right: 0.35rem;
+      color: rgba(148, 163, 184, 0.9);
+    }
+
+    .contact span:first-child::before {
+      content: "";
+      margin-right: 0;
+    }
+
+    .contact a {
+      color: rgba(248, 250, 252, 0.9);
+      text-decoration: none;
+    }
+
+    .contact a:hover {
+      text-decoration: underline;
+    }
+
+    .tagline {
+      margin-top: var(--space-xs);
+      font-size: 0.9rem;
+      color: rgba(148, 163, 184, 0.95);
+      font-family: var(--font-mono);
+      white-space: normal;
+    }
+
+    .tagline strong {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    /* Sections */
+    .section {
+      margin-bottom: var(--space-lg);
+    }
+
+    .section-title {
+      font-size: 0.9rem;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--muted);
+      border-bottom: 1px solid var(--border-subtle);
+      padding-bottom: var(--space-xs);
+      margin-bottom: var(--space-sm);
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-xs);
+      margin-top: var(--space-xs);
+    }
+
+    .pill {
+      border-radius: 999px;
+      border: 1px solid var(--border-subtle);
+      padding: 3px 8px;
+      font-size: 0.76rem;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .pill--accent {
+      border-color: rgba(0, 174, 239, 0.36);
+      background: rgba(0, 174, 239, 0.06);
+      color: #0369a1;
+    }
+
+    p {
+      margin: 0 0 var(--space-sm);
+      font-size: 0.9rem;
+      line-height: 1.45;
+    }
+
+    .summary-text {
+      max-width: 72ch;
+    }
+
+    /* Experience */
+    .job {
+      margin-bottom: var(--space-md);
+    }
+
+    .job-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: var(--space-xs);
+      margin-bottom: 2px;
+    }
+
+    .job-title {
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .job-meta {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .job-subtitle {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--muted);
+      margin-bottom: 2px;
+    }
+
+    ul {
+      margin: 0 0 var(--space-sm) 1rem;
+      padding: 0;
+      font-size: 0.9rem;
+    }
+
+    li {
+      margin-bottom: 3px;
+    }
+
+    /* Two-column skills block */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1.1fr;
+      gap: var(--space-lg);
+    }
+
+    @media (max-width: 768px) {
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+      .header-bar {
+        margin: calc(-1 * var(--space-lg)) -16px var(--space-lg);
+      }
+      .page {
+        padding: var(--space-lg) 16px;
+      }
+    }
+
+    .meta-small {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="header-bar">
+      <div class="header-top">
+        <div>
+          <div class="name">CHRIS PARSELL</div>
+          <div class="role">Senior Design Systems Manager, PX Guidelines</div>
+        </div>
+        <div class="contact">
+          <span>New York, NY</span>
+          <span><a href="mailto:xris3@xris.net">xris3@xris.net</a></span>
+          <span><a href="tel:+12034150232">(203) 415-0232</a></span>
+          <span><a href="https://xris.net" target="_blank" rel="noopener">xris.net</a></span>
+          <span><a href="https://www.linkedin.com/in/christopherparsell" target="_blank" rel="noopener">linkedin.com/in/christopherparsell</a></span>
+        </div>
+      </div>
+      <div class="tagline">
+        <strong>Platform Experience + DesignOps</strong> — Where UX systems meet organizational systems.
+      </div>
+    </header>
+
+    <!-- SUMMARY -->
+    <section class="section">
+      <h2 class="section-title">Summary</h2>
+      <p class="summary-text">
+        Senior Design Systems Manager specializing in <strong>DesignOps, UX governance, and cross-platform standards</strong> for large-scale streaming ecosystems. Led <strong>PX Guidelines</strong> — NBCUniversal’s multi-brand design system spanning web, CTV, mobile, and partner endpoints — adopted by over 90% of product squads. Expert in <strong>Figma↔Storybook parity, multi-brand tokenization, accessibility compliance, versioning, and lifecycle governance</strong>. Known for improving delivery speed, eliminating design debt, and enforcing a consistent viewer experience across platforms.
+      </p>
+    </section>
+
+    <!-- SKILLS / TOOLING -->
+    <section class="section">
+      <h2 class="section-title">Core Competencies & Tools</h2>
+      <div class="skills-grid">
+        <div>
+          <p class="meta-small"><strong>DesignOps & Systems</strong></p>
+          <div class="pill-row">
+            <span class="pill pill--accent">DesignOps governance</span>
+            <span class="pill">System roadmapping</span>
+            <span class="pill">Component lifecycle & deprecation</span>
+            <span class="pill">Multi-brand standards</span>
+            <span class="pill">CTV & partner compliance</span>
+            <span class="pill">Release cadence</span>
+            <span class="pill">Accessibility QA (WCAG)</span>
+            <span class="pill">Adoption strategy & KPIs</span>
+          </div>
+        </div>
+        <div>
+          <p class="meta-small"><strong>Design + Engineering Integration</strong></p>
+          <div class="pill-row">
+            <span class="pill pill--accent">Figma (Auto Layout, variants, tokens)</span>
+            <span class="pill">Storybook</span>
+            <span class="pill">Dev Mode, spec authoring</span>
+            <span class="pill">Token strategy with engineering</span>
+            <span class="pill">React / HTML / CSS awareness</span>
+            <span class="pill">Jira & Confluence</span>
+            <span class="pill">Component analytics & audits</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="section">
+      <h2 class="section-title">Experience</h2>
+
+      <article class="job">
+        <div class="job-header">
+          <div class="job-title">Senior Product UX Manager, PX Guidelines (DesignOps Lead)</div>
+          <div class="job-meta">NBCUniversal · New York, NY · 2021–Present</div>
+        </div>
+        <div class="job-subtitle">PX Guidelines — Multi-brand design system for streaming platforms</div>
+        <ul>
+          <li>Led <strong>PX Guidelines</strong>, NBCU’s multi-brand design system powering UX for Peacock, NBC Sports, Olympics, and partner endpoints across web, mobile, and CTV.</li>
+          <li>Achieved <strong>90%+ adoption across 13–20 product squads</strong> through governance models, documentation, and embedded DesignOps support.</li>
+          <li>Reduced duplicate components by <strong>200+ assets</strong>, consolidating into a ~150–300 component core library with defined lifecycle, versioning, and deprecation rules.</li>
+          <li>Co-owned <strong>design token strategy</strong> with engineering, maintaining 1:1 parity between Figma components and Storybook implementations.</li>
+          <li>Established a design system release cadence, audits, and compliance checkpoints that cut UI delivery time by an estimated <strong>30–50%</strong> and reduced handoff debate.</li>
+          <li>Documented CTV interaction patterns, partner compliance guidelines, and WCAG requirements, improving accessibility pass rates across surfaces.</li>
+          <li>Governed system usage for the <strong>Emmy-winning 2024 Paris Olympics experience</strong>, ensuring PX-compliant component and token usage across partner platforms.</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <div class="job-header">
+          <div class="job-title">Senior Product Manager, UX – Console DesignOps (Contract)</div>
+          <div class="job-meta">Amazon Web Services (AWS) · New York, NY · 2019–2021</div>
+        </div>
+        <div class="job-subtitle">AWS Management Console design system & navigation standards</div>
+        <ul>
+          <li>Supported DesignOps initiatives for the AWS Console design system used across 200+ cloud services, focusing on navigation and cross-service UX consistency.</li>
+          <li>Helped define component lifecycle and usage policies that reduced fragmentation across Console teams and improved system reliability.</li>
+          <li>Aligned Figma assets and Storybook components via shared tokens and documentation, improving code parity and accessibility standards.</li>
+          <li>Standardized navigation UX guidelines to give enterprise users a more predictable, consistent experience across high-complexity workflows.</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <div class="job-header">
+          <div class="job-title">Lead UX Engineer / Product Designer</div>
+          <div class="job-meta">Cogstate · New Haven, CT · 2016–2019</div>
+        </div>
+        <div class="job-subtitle">Reusable UI patterns for clinical-grade, voice-enabled applications</div>
+        <ul>
+          <li>Designed reusable UI patterns and interaction rules for voice-enabled mobile interfaces used in cognitive assessment products.</li>
+          <li>Partnered with engineering to ensure component parity between prototypes, specification documents, and production builds.</li>
+          <li>Incorporated accessibility and state documentation into the system, supporting consistent implementation across teams.</li>
+        </ul>
+      </article>
+    </section>
+
+    <!-- EDUCATION & OTHER -->
+    <section class="section">
+      <h2 class="section-title">Education & Additional Experience</h2>
+      <p><strong>School of the Art Institute of Chicago</strong> — BFA, Design</p>
+      <p class="meta-small">
+        Earlier roles at IBM, CBS, MTV, and Comedy Central focused on interactive product design, early design system thinking, and cross-functional collaboration for digital experiences.
+      </p>
+      <p class="meta-small">
+        <strong>Selected Leadership:</strong> Instructor and mentor at BrainStation and Product School, teaching DesignOps, component lifecycle thinking, and Figma-to-engineering workflows to designers and product managers.
+      </p>
+    </section>
+  </main>
+</body>
+</html>
+

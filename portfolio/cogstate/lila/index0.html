@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Lila – Voice-Enabled Memory Game | Chris Parsell</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Meta -->
+  <meta name="description" content="Lila is a voice-enabled mobile game based on memorization, designed at Cogstate. Case study by UX designer Chris Parsell." />
+  <meta property="og:title" content="Lila – Voice-Enabled Memory Game" />
+  <meta property="og:description" content="A voice-enabled mobile game based on memorization, transforming Cogstate’s clinical trial game into a consumer-ready experience." />
+  <meta property="og:type" content="website" />
+
+  <!-- Favicon (update to xnv4 assets as needed) -->
+  <link rel="icon" href="/assets/favicon-32.png" type="image/png" />
+
+  <!-- Fonts (optional: align with xnv4’s global font stack) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Base styles – assuming xnv4 has its own main stylesheet -->
+  <link rel="stylesheet" href="/css/xnv4.css" />
+
+  <style>
+    /* Minimal local styles just for structure; override in xnv4 if needed */
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+      margin: 0;
+      color: #111;
+      background-color: #fafafa;
+      line-height: 1.6;
+    }
+
+    .page-wrap {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+    }
+
+    header.case-header {
+      margin: 2rem 0 1rem;
+    }
+
+    .case-title {
+      font-size: clamp(2.2rem, 3vw, 2.8rem);
+      font-weight: 700;
+      margin: 0 0 0.5rem;
+    }
+
+    .case-subtitle {
+      font-size: 1.1rem;
+      color: #555;
+      margin: 0 0 1.5rem;
+    }
+
+    .case-meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .case-meta-block h3 {
+      font-size: 0.9rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #777;
+      margin: 0 0 0.25rem;
+    }
+
+    .case-meta-block p {
+      margin: 0;
+      font-size: 0.95rem;
+    }
+
+    .case-section {
+      margin: 3rem 0;
+    }
+
+    .case-section h2 {
+      font-size: 1.4rem;
+      margin: 0 0 0.5rem;
+    }
+
+    .case-section h3 {
+      font-size: 1.2rem;
+      margin: 1.8rem 0 0.4rem;
+    }
+
+    .case-section p {
+      margin: 0 0 1rem;
+    }
+
+    .case-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+      margin: 2rem 0;
+      align-items: flex-start;
+    }
+
+    figure.case-figure {
+      margin: 0 0 1.5rem;
+    }
+
+    figure.case-figure img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 4px;
+    }
+
+    .case-caption {
+      font-size: 0.85rem;
+      color: #666;
+      margin-top: 0.5rem;
+    }
+
+    .mobile-screen-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .mobile-screen-row img {
+      width: 280px;
+      max-width: 100%;
+      border-radius: 12px;
+    }
+
+    .tag-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #999;
+      margin-bottom: 0.25rem;
+    }
+
+    .tag-value {
+      font-size: 0.95rem;
+    }
+
+    .hero-skew {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin: 1rem 0 2rem;
+    }
+
+    @media (max-width: 600px) {
+      .page-wrap {
+        padding: 1.5rem 1.25rem 3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- xnv4 site header include goes here -->
+  <!-- <?php include 'partials/header.php'; ?> -->
+
+  <main class="page-wrap" aria-labelledby="lila-title">
+    <header class="case-header">
+      <h1 id="lila-title" class="case-title">Lila</h1>
+      <p class="case-subtitle">A voice-enabled mobile game based on memorization</p>
+
+      <section class="case-meta-grid" aria-label="Project metadata">
+        <div class="case-meta-block">
+          <h3>Client</h3>
+          <p>Cogstate</p>
+        </div>
+
+        <div class="case-meta-block">
+          <h3>Skills</h3>
+          <p>User Research · UX / UI Design · Design Thinking · Design Sprints · Usability Testing</p>
+        </div>
+
+        <div class="case-meta-block">
+          <h3>Software</h3>
+          <p>Sketch · Adobe XD · InVision · Photoshop · Illustrator</p>
+        </div>
+
+        <div class="case-meta-block">
+          <h3>My Role</h3>
+          <p>UX Designer</p>
+          <h3>Timeline</h3>
+          <p>Two months, plus one month of usability testing</p>
+        </div>
+
+        <div class="case-meta-block">
+          <h3>Responsibilities</h3>
+          <p>Product Design · Interaction Design · Prototyping · User Research · Usability Testing</p>
+        </div>
+      </section>
+    </header>
+
+    <img
+      class="hero-skew"
+      src="https://cdn.prod.website-files.com/61303901cfef18423771ae5a/6157575d72dac11c9c32582d_hero%20skew.svg"
+      alt=""
+    />
+
+    <!-- Project Overview / Challenge -->
+    <section class="case-section" id="overview">
+      <h2>Project Overview</h2>
+
+      <h3>The Challenge</h3>
+      <p>
+        The creative brief for <strong>Lila</strong> was <em>beautifully</em> simple:
+        take one of Cogstate’s most successful games used in clinical trials and make a consumer version of it for smartphones.
+      </p>
+
+      <h3>User Research</h3>
+      <p>
+        However, execution of the idea was actually more creatively challenging than originally realized for everyone involved—
+        especially when it came to the value proposition of taking our
+        “International Shopping List Test” game, the gold standard for cognitive assessment in clinical trials,
+        and commercializing it for a broad non-academic audience.
+      </p>
+
+      <div class="case-row">
+        <figure class="case-figure">
+          <img
+            src="https://cdn.prod.website-files.com/61303901cfef18423771ae5a/61634c9fa50b007082546e4a_original-sketchx2%402x.png"
+            alt="Original flow diagram created during the design sprint"
+          />
+          <figcaption class="case-caption">
+            Original flow diagram created during the design sprint.
+          </figcaption>
+        </figure>
+
+        <figure class="case-figure">
+          <img
+            src="https://cdn.prod.website-files.com/61303901cfef18423771ae5a/61635113dc6297204d82ad3f_wireflow-taketest.svg"
+            alt="Primary user flow diagram discovered during user interviews"
+          />
+          <figcaption class="case-caption">
+            One of three primary user flows discovered during user interviews.
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Personas -->
+    <section class="case-section" id="personas">
+      <h2>Personas</h2>
+      <p>
+        Once past the first <strong>design sprint</strong> with our in-house scientists,
+        I interviewed five subjects to provide real-world input on the ideas taking form.
+      </p>
+      <p>
+        Due to sensitivity around privacy concerns, I created proto-personas to keep the user at the center of the process
+        without exposing any individual’s identity.
+      </p>
+
+      <figure class="case-figure">
+        <img
+          src="https://cdn.prod.website-files.com/61303901cfef18423771ae5a/616352e4d300e8a0097c114f_persona1.svg"
+          alt="Example proto-persona created for the Lila project"
+        />
+      </figure>
+    </section>
+
+    <!-- Wireframes -->
+    <section class="case-section" id="wireframes">
+      <h2>Wireframes</h2>
+
+      <p>
+        Wireframes were created to represent the tasks for each of the primary scenarios.
+        These low-fidelity screens were also used to create an early, interactive prototype for stakeholder reviews.
+      </p>
+
+      <figure class="case-figure">
+        <img
+          src="https://cdn.prod.website-files.com/61303901cfef18423771ae5a/61638d7334ebcf5740aed978_1_starttest_wh%20outlines.svg"
+          alt="Early wireframes representing primary scenarios"
+        />
+      </figure>
+
+      <div class="case-row">
+        <div>
+          <div class="tag-label">Dashboard</div>
+          <div class="tag-value">Early concept for the main dashboard view.</div>
+        </div>
+        <div>
+          <div class="tag-label">Ambient Sound Check</div>
+          <div class="tag-value">Ensuring the environment is suitable for voice-based assessments.</div>
+        </div>
+        <div>
+          <div class="tag-label">Device Check</div>
+          <div class="tag-value">Guiding players through microphone and device readiness.</div>
+        </div>
+      </div>
+
+      <h3>Wireflow: Device Check</h3>
+      <p>
+        Working with key stakeholders on the Cogstate science team,
+        I created a series of low-fidelity user flows to prototype how people move from device check into the game itself.
+      </p>
+
+      <figure class="case-figure">
+        <img
+          src="https://cdn.prod.website-files.com/61303901cfef18423771ae5a/616398cf2ebb5654c14c239b_userflow%201%20System%20Check%20Outline.svg"
+          alt="Wireflow diagram showing the device and system check experience"
+        />
+      </figure>
+    </section>
+
+    <!-- Iterations & High-Fidelity -->
+    <section class="case-section" id="iterations">
+      <h2>Wireframes: Iterations</h2>
+      <p>
+        Once stakeholders could interact with the prototype, feedback quickly surfaced opportunities to refine both the UX and UI.
+        I iterated on several details in the interface while also beginning to layer in branding and visual language.
+      </p>
+
+      <figure class="case-figure">
+        <img
+          src="https://cdn.prod.website-files.com/61303901cfef18423771ae5a/6163aae1fd7cc706822c4d0e_MockUps%402x.svg"
+          alt="Mid-fidelity mockups showing UI refinements"
+        />
+      </figure>
+
+      <h2>Wireframes: High-Fidelity</h2>
+      <p>
+        From there, I evolved the <strong>interactive prototype</strong> into a fully branded experience,
+        integrating visual design, color, and typography to bring Lila’s identity to life.
+      </p>
+
+      <figure class="case-figure">
+        <img
+          src="https://cdn.prod.website-files.com/61303901cfef18423771ae5a/6163ab91c3ab01912566f8d8_MockUps-hifi%402x.svg"
+          alt="High-fidelity mockups for the Lila experience"
+        />
+      </figure>
+    </section>
+
+    <!-- Device Check Screens -->
+    <section class="case-section" id="device-check">
+      <h2>Wireframes: Device Check</h2>
+      <div class="mobile-screen-row">
+        <img
+          src="https://cdn.prod.website-files.com/61303901cfef18423771ae5a/6163ad89d115657513ab3906_5.0.1%20Device%20Check.svg"
+          alt="Mobile screen showing initial device check"
+        />
+        <img
+          src="https://cdn.prod.website-files.com/61303901cfef18423771ae5a/6163ad898e80ec2594d2e3c9_5.0.3%20Test%20List%20Reading%20Device%20Check.svg"
+          alt="Mobile screen showing test list reading during device check"
+        />
+        <img
+          src="https://cdn.prod.website-files.com/61303901cfef18423771ae5a/6163b0ae076fd6e9ec060976_5.0.3.1%20Test%20List%20Reading%20Device%20Check%20-%20Ready.svg"
+          alt="Mobile screen indicating device is ready for test"
+        />
+      </div>
+    </section>
+
+    <!-- In-game Screens -->
+    <section class="case-section" id="in-game">
+      <h2>Wireframes: In-Game</h2>
+      <div class="mobile-screen-row">
+        <img
+          src="https://cdn.prod.website-files.com/61303901cfef18423771ae5a/6163b17d2d64091834d6f476_5.2.1a%20Test%20Intro.svg"
+          alt="Mobile screen introducing the test"
+        />
+        <img
+          src="https://cdn.prod.website-files.com/61303901cfef18423771ae5a/6163b25e51c24f632454c202_5.2.2.1%20Test%20Recall%401x.png"
+          alt="Mobile screen for test recall"
+        />
+        <img
+          src="https://cdn.prod.website-files.com/61303901cfef18423771ae5a/6163b30b51c24f62b354c84f_5.2.3a%20Post%20Reading.svg"
+          alt="Mobile screen for post-reading state"
+        />
+      </div>
+    </section>
+
+    <!-- Typography & Color -->
+    <section class="case-section" id="visual-language">
+      <h2>Typography</h2>
+      <figure class="case-figure">
+        <img
+          src="https://cdn.prod.website-files.com/61303901cfef18423771ae5a/6163b719a50b007b2a571b3d_Typography.png"
+          alt="Lila typography system"
+        />
+      </figure>
+
+      <h2>Color Guide</h2>
+      <figure class="case-figure">
+        <img
+          src="https://cdn.prod.website-files.com/61303901cfef18423771ae5a/6163b719750b6b5776d5485a_Colors.png"
+          alt="Lila color palette"
+        />
+      </figure>
+    </section>
+  </main>
+
+  <!-- xnv4 site footer include goes here -->
+  <!-- <?php include 'partials/footer.php'; ?> -->
+
+</body>
+</html>

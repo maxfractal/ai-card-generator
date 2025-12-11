@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio - Amazon Web Services</title>
+    <style>
+        body {
+            font-family: system-ui, sans-serif;
+            background-color: #080e1e;
+            color: #e0e4f0;
+            margin: 0;
+            padding: 2rem;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: #7ab6ff;
+            transition: color .2s ease;
+        }
+
+        a:hover {
+            color: #a9d2ff;
+        }
+
+        header,
+        main,
+        section {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        h1,
+        h2 {
+            color: #e8ebf7;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: .5rem;
+        }
+
+        h2 {
+            margin-top: 2rem;
+            font-size: 1.4rem;
+        }
+
+        main p {
+            margin-bottom: 1.5rem;
+            max-width: 800px;
+        }
+
+        .nav {
+            margin-bottom: 1.5rem;
+            display: flex;
+            gap: .75rem;
+            font-size: .95rem;
+        }
+
+        .nav a {
+            color: #e0e4f0;
+        }
+
+        .nav a:hover {
+            color: #7ab6ff;
+        }
+
+        /* Skill pills */
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: .75rem;
+            margin-top: 1.25rem;
+            margin-bottom: 2rem;
+        }
+
+        .skill-pill {
+            background: linear-gradient(145deg, #1a2340, #101830);
+            border: 1px solid rgba(255, 255, 255, .08);
+            color: #e0e4f0;
+            padding: .4rem .9rem;
+            border-radius: 999px;
+            font-size: .9rem;
+            font-weight: 500;
+            letter-spacing: .3px;
+            transition: all .2s ease;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .skill-pill:hover {
+            background: linear-gradient(145deg, #223366, #1b2550);
+            box-shadow: 0 0 10px rgba(64, 128, 255, .25);
+            transform: translateY(-2px);
+        }
+
+        .skill-pill[aria-pressed="true"] {
+            background: linear-gradient(145deg, #2a3b7a, #223366);
+            border-color: rgba(122, 182, 255, .35);
+            box-shadow: 0 0 0 2px rgba(122, 182, 255, .25);
+        }
+
+        /* Filter bar */
+        .filter-bar {
+            display: flex;
+            align-items: center;
+            gap: .75rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-summary {
+            opacity: .8;
+            font-size: .9rem;
+        }
+
+        .clear-filters {
+            margin-left: auto;
+            background: transparent;
+            color: #a9d2ff;
+            border: 1px solid rgba(169, 210, 255, .35);
+            padding: .35rem .7rem;
+            border-radius: 999px;
+            cursor: pointer;
+            font-size: .85rem;
+            transition: all .2s ease;
+        }
+
+        .clear-filters:hover {
+            background: rgba(169, 210, 255, .08);
+        }
+
+        /* Case Studies Grid */
+        ul.cards {
+            list-style: none;
+            padding: 0;
+            margin-top: 1.5rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .cards li {
+            position: relative;
+            aspect-ratio: 3 / 2;
+            border-radius: 16px;
+            overflow: hidden;
+            background: linear-gradient(145deg, #1a2340, #101830);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, .5);
+            transition: transform .25s ease, box-shadow .25s ease, opacity .2s ease, scale .2s ease;
+            display: grid;
+            place-items: center;
+            isolation: isolate;
+        }
+
+        .cards li:hover {
+            border: solid white 2px;
+            font-size: 2em;
+            color: darkorchid transform: translateY(-6px);
+            box-shadow: 0 8px 18px rgba(0, 0, 0, .7), 0 0 12px rgba(64, 128, 255, .25);
+        }
+
+        .thumb {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            transform: scale(1);
+            transition: transform .35s ease, filter .35s ease, opacity .35s ease;
+            content-visibility: auto;
+        }
+
+        .cards li:hover .thumb {
+            transform: scale(1.04);
+            filter: saturate(1.05);
+        }
+
+        .thumb::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom,
+                    rgba(8, 14, 30, 0.10) 0%,
+                    rgba(8, 14, 30, 0.25) 35%,
+                    rgba(8, 14, 30, 0.55) 70%,
+                    rgba(8, 14, 30, 0.75) 100%);
+            transition: opacity .3s ease;
+        }
+
+        .cards li:hover .thumb::after {
+            opacity: 0.9;
+        }
+
+        .card-title {
+            position: relative;
+            z-index: 1;
+            color: #e8ebf7;
+            font-weight: 700;
+            letter-spacing: .3px;
+            font-size: 1rem;
+            text-align: center;
+            padding: 0 1rem;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, .6);
+        }
+
+        .card-link {
+            position: absolute;
+            inset: 0;
+            z-index: 2;
+            display: block;
+        }
+
+        .is-hidden {
+            opacity: .15;
+            scale: .98;
+            pointer-events: none;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Amazon Web Services</h1>
+        <div class="nav">
+            <a href="../index.html">Portfolio</a> |
+            <a href="../../">Home</a>
+        </div>
+    </header>
+
+    <main>
+        <h2>Senior Product Manager and Designer</h2>
+        <p>
+            As a Senior Product Manager and Designer at NBCUniversal, I lead the design and development of
+            streaming and digital TV experiences. My focus is on creating user-centered solutions that are both
+            functional and engaging,
+            blending product strategy, art direction, and UX excellence.
+        </p>
+        <p><strong>Areas of focus:</strong> Art Direction • Product Design</p>
+
+        <div class="filter-bar" aria-label="Case study filters">
+            <div class="skills" role="group" aria-label="Skill filters">
+                <button type="button" class="skill-pill" aria-pressed="false" data-skill="ui/ux">UI/UX</button>
+                <button type="button" class="skill-pill" aria-pressed="false" data-skill="design systems">Design
+                    Systems</button>
+                <button type="button" class="skill-pill" aria-pressed="false" data-skill="figma">Figma</button>
+                <button type="button" class="skill-pill" aria-pressed="false" data-skill="product design">Product
+                    Design</button>
+                <button type="button" class="skill-pill" aria-pressed="false"
+                    data-skill="ai-enhanced workflows">AI-enhanced Workflows</button>
+                <button type="button" class="skill-pill" aria-pressed="false" data-skill="design leadership">Design
+                    Leadership</button>
+                <button type="button" class="skill-pill" aria-pressed="false"
+                    data-skill="prototyping">Prototyping</button>
+                <button type="button" class="skill-pill" aria-pressed="false"
+                    data-skill="cross-functional collaboration">Cross-functional Collaboration</button>
+                <button type="button" class="skill-pill" aria-pressed="false" data-skill="product discovery">Product
+                    Discovery</button>
+                <button type="button" class="skill-pill" aria-pressed="false" data-skill="design operations">Design
+                    Operations</button>
+                <button type="button" class="skill-pill" aria-pressed="false" data-skill="team leadership">Team
+                    Leadership</button>
+                <button type="button" class="skill-pill" aria-pressed="false" data-skill="project management">Project
+                    Management</button>
+            </div>
+            <button type="button" class="clear-filters" hidden>Clear filters</button>
+            <div class="filter-summary" aria-live="polite"></div>
+        </div>
+    </main>
+
+    <section>
+        <h2>Case Studies</h2>
+        <ul class="cards">
+            <li data-tags="ui/ux, product design, design systems, cross-functional collaboration">
+                <span class="thumb" style="background-image:url('./img/olympics-app.webp');"></span>
+                <span class="card-title">2024 Paris Olympics App</span>
+                <a class="card-link" href="./paris_app/indexv3.html"
+                    aria-label="Open case study: 2024 Paris Olympics App"></a>
+            </li>
+            <li data-tags="ui/ux, product design, design systems, team leadership, project management">
+                <span class="thumb" style="background-image:url('./img/olympics-platform.webp');"></span>
+                <span class="card-title">2024 Paris Olympics Platform Experience</span>
+                <a class="card-link" href="./2024_paris_olympics_platform_exp.html"
+                    aria-label="Open case study: 2024 Paris Olympics Platform Experience"></a>
+            </li>
+            <li data-tags="design systems, figma, design operations, cross-functional collaboration">
+                <span class="thumb" style="background-image:url('./img/px-guidelines.webp');"></span>
+                <span class="card-title">Platform Experience Guidelines</span>
+                <a class="card-link" href="px/index.html"
+                    aria-label="Open case study: Platform Experience Guidelines"></a>
+            </li>
+            <li data-tags="product discovery, ai-enhanced workflows, prototyping, ui/ux">
+                <span class="thumb" style="background-image:url('./img/paris-service-design.webp');"></span>
+                <span class="card-title">Service Design: Paris Olympics</span>
+                <a class="card-link" href="paris.html" aria-label="Open case study: Service Design: Paris Olympics"></a>
+            </li>
+            <li data-tags="ui/ux, product design, prototyping, cross-functional collaboration">
+                <span class="thumb" style="background-image:url('./img/wwc-app.webp');"></span>
+                <span class="card-title">WWC App</span>
+                <a class="card-link" href="wwc.html" aria-label="Open case study: WWC App"></a>
+            </li>
+        </ul>
+    </section>
+
+    <script>
+        (function () {
+            const pills = Array.from(document.querySelectorAll('.skill-pill'));
+            const cards = Array.from(document.querySelectorAll('.cards li'));
+            const summary = document.querySelector('.filter-summary');
+            const clearBtn = document.querySelector('.clear-filters');
+
+            const normalize = s => s.trim().toLowerCase();
+
+            function getActiveSkills() {
+                return pills.filter(p => p.getAttribute('aria-pressed') === 'true')
+                    .map(p => normalize(p.dataset.skill));
+            }
+
+            function updateSummary(active) {
+                if (!active.length) {
+                    summary.textContent = 'Showing all case studies';
+                    clearBtn.hidden = true;
+                } else {
+                    summary.textContent = `Filtered by: ${active.join(', ')}`;
+                    clearBtn.hidden = false;
+                }
+            }
+
+            function matchesAllTags(cardTags, active) {
+                return active.every(tag => cardTags.includes(tag));
+            }
+
+            function applyFilter() {
+                const active = getActiveSkills();
+                updateSummary(active);
+
+                cards.forEach(card => {
+                    const tags = card.dataset.tags ? card.dataset.tags.split(',').map(normalize) : [];
+                    const show = active.length ? matchesAllTags(tags, active) : true;
+                    card.classList.toggle('is-hidden', !show);
+                });
+            }
+
+            function togglePill(pill) {
+                const pressed = pill.getAttribute('aria-pressed') === 'true';
+                pill.setAttribute('aria-pressed', String(!pressed));
+                applyFilter();
+            }
+
+            pills.forEach(pill => {
+                pill.addEventListener('click', () => togglePill(pill));
+                pill.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        togglePill(pill);
+                    }
+                });
+            });
+
+            clearBtn.addEventListener('click', () => {
+                pills.forEach(p => p.setAttribute('aria-pressed', 'false'));
+                applyFilter();
+            });
+
+            updateSummary([]);
+        })();
+    </script>
+</body>
+
+</html>

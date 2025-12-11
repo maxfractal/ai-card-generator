@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AWS Utility Centers — Case Study | Chris Parsell</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <style>
+    :root{ --bg:#0b0d12; --panel:#12151d; --ink:#e7ecf3; --muted:#9aa3af; --accent:#22d3ee; --line:#1e2230; }
+    *{box-sizing:border-box}
+    body{margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial; background:var(--bg); color:var(--ink)}
+    header.hero{position:relative; overflow:hidden; height:380px; display:flex; align-items:center; justify-content:center; text-align:center; color:var(--ink); background:radial-gradient(ellipse at center, rgba(34,211,238,.08) 0%, transparent 70%), linear-gradient(135deg, #0f172a 0%, #111827 70%); border-bottom:1px solid var(--line)}
+    .hero::before{content:''; position:absolute; inset:0; background:url('assets/images/utility_waveform.png') center/cover no-repeat; opacity:0.25; mix-blend-mode:screen;}
+    .hero-content{position:relative; z-index:2; padding:20px; max-width:800px}
+    .hero h1{font-family:"Bebas Neue",Inter,sans-serif; font-size:72px; margin:0}
+    .hero p{font-size:18px; color:#c7d0dc; line-height:1.7; margin-top:8px}
+    .wrap{max-width:1100px; margin:0 auto; padding:32px 20px 96px}
+    .eyebrow{letter-spacing:.12em; text-transform:uppercase; color:var(--accent); font-weight:700; font-size:12px}
+    h2{font-family:"Bebas Neue",Inter,sans-serif; letter-spacing:.02em; font-size:28px; margin:20px 0 10px}
+    h3{font-size:20px; margin:16px 0 6px; color:var(--ink)}
+    p{color:#c7d0dc; line-height:1.8; font-size:15.5px}
+    ul{margin:0; padding-left:18px; color:#c7d0dc}
+    li{margin:6px 0}
+    .panel{background:var(--panel); border:1px solid var(--line); border-radius:18px; padding:22px; margin-top:22px}
+    .grid{display:grid; gap:18px}
+    .g-2{grid-template-columns:1fr 1fr}
+    .tag{display:inline-block; padding:.35rem .6rem; border:1px solid var(--line); border-radius:999px; color:var(--muted); margin:.2rem .25rem .2rem 0; font-size:12px}
+    .callout{border-left:3px solid var(--accent); padding-left:14px; margin:12px 0}
+    a.cta{display:inline-block; margin-top:10px; color:var(--bg); background:var(--accent); padding:10px 14px; border-radius:10px; font-weight:700; text-decoration:none}
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-content">
+      <div class="eyebrow">Case Study</div>
+      <h1>AWS Utility Centers</h1>
+      <p>Designing a unified hub that simplifies how AWS customers access, manage, and act on their essential utilities — from billing and compliance to DevOps — all in one place.</p>
+      <div style="margin-top:12px">
+        <span class="tag">Console UX</span>
+        <span class="tag">Platform IA</span>
+        <span class="tag">Role-Based Design</span>
+        <span class="tag">User Research</span>
+        <span class="tag">Prototyping</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <section class="grid g-2">
+      <div class="panel">
+        <h2>Objective</h2>
+        <p>Empower AWS users to quickly access their most critical operational utilities through a single, streamlined interface. Build a role-based navigation model that consolidates fragmented workflows into focused, actionable centers.</p>
+        <ul>
+          <li><strong>Summary:</strong> A new hub within the AWS Management Console uniting billing, compliance, and DevOps tools.</li>
+          <li><strong>My Role:</strong> UX Strategy · Product Design · Information Architecture · Research Synthesis · Prototyping</li>
+          <li><strong>Timeline:</strong> 3 months including user interviews, prototyping, and partner stakeholder testing</li>
+        </ul>
+      </div>
+
+      <div class="panel">
+        <h2>Problem</h2>
+        <p class="callout">AWS customers had to navigate across multiple services to perform what felt like single role-based tasks.</p>
+        <ul>
+          <li>DevOps managers toggled between CodePipeline, CodeBuild, and CodeDeploy just to track delivery progress.</li>
+          <li>Billing specialists used separate dashboards for cost, usage, and alerts.</li>
+          <li>Compliance officers lacked a unified view of audit and policy states.</li>
+          <li>This fragmentation slowed workflows and reduced visibility across teams.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Approach</h2>
+      <ul>
+        <li><strong>User Research:</strong> Conducted interviews with AWS enterprise customers to map mental models and identify top utility workflows.</li>
+        <li><strong>Information Architecture:</strong> Defined a modular, role-based navigation framework integrating billing, compliance, and DevOps centers.</li>
+        <li><strong>Prototyping:</strong> Created interactive prototypes to visualize task consolidation and measure navigation efficiency.</li>
+      </ul>
+    </section>
+
+    <section class="grid g-2">
+      <div class="panel">
+        <h2>Outcome</h2>
+        <ul>
+          <li><strong>Role-Based Dashboards:</strong> Streamlined access for Billing, Compliance, and DevOps roles.</li>
+          <li><strong>Reduced Cognitive Load:</strong> Simplified workflows by up to 35% fewer clicks to key utilities.</li>
+          <li><strong>Faster Decision-Making:</strong> Real-time cross-service insights within a unified console view.</li>
+        </ul>
+      </div>
+
+      <div class="panel">
+        <h2>Next Steps</h2>
+        <ul>
+          <li>Scale role-based design patterns across additional AWS services.</li>
+          <li>Introduce personalized utility recommendations via ML insights.</li>
+          <li>Expand testing for accessibility and enterprise admin features.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Artifacts</h2>
+      <ul>
+        <li>Wireframes, interactive dashboards, and annotated prototypes</li>
+        <li>Journey maps and role workflows</li>
+        <li>Partner validation reports and research summaries</li>
+      </ul>
+      <a class="cta" href="#">View Design System Elements</a>
+    </section>
+
+    <section class="panel">
+      <h2>Wireframes</h2>
+      <div style="display:flex; gap:12px; align-items:flex-start; flex-wrap:wrap; margin-top:12px">
+        <img src="../../nbc/paris_app/assets/images/wireframes/Hub-Content-Type.png" alt="Hub Content Type — Lo-Fi Wireframe Exploration" style="width:calc(50% - 6px); border-radius:14px; display:block">
+        <img src="https://placehold.co/529x294" alt="Placeholder" style="width:calc(50% - 6px); border-radius:14px; display:block">
+      </div>
+    </section>
+
+    <footer style="margin-top:40px; color:var(--muted); font-size:13px; text-align:center">
+      © Chris Parsell — AWS Utility Centers Case Study
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>NBC Design System — Image Gallery</title>
+  <style>
+    :root{--bg:#0b0d12;--card:#0f1724;--text:#e7ecf3;--muted:#9aa3af}
+    body{margin:0;font-family:Inter,system-ui,Arial;background:var(--bg);color:var(--text);padding:28px}
+    .wrap{max-width:1200px;margin:0 auto}
+    h1{font-size:28px;margin:0 0 18px}
+    section{background:var(--card);border-radius:12px;padding:18px;margin:18px 0;border:1px solid rgba(255,255,255,.04)}
+    h2{font-size:20px;margin:0 0 12px;color:var(--text)}
+    .sub{margin:8px 0 14px}
+    .images{display:flex;gap:12px;flex-wrap:wrap}
+    .images img{max-width:320px;width:100%;height:auto;border-radius:10px;border:1px solid rgba(255,255,255,.03);display:block}
+    .images .item{flex:1 1 320px}
+    .path{font-size:12px;color:var(--muted);margin-bottom:8px}
+    @media (max-width:720px){.images{justify-content:center}.images .item{flex-basis:100%}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>NBC Design System — Image Gallery</h1>
+	  <div class="nav">
+        <a href="../../index.html">Portfolio</a> |
+        <a href="../../../index.html">Home</a>
+      </div>
+	<section>
+		<div class="panel">
+			<p>
+				The Milan Cortina 2026 Olympics work isn’t presented as static mockups—it's a fully structured Figma design system built for the TV Everywhere (TVE) ecosystem. The file contains component libraries, motion rules, metadata-driven template logic, and platform-specific artwork guidelines that power automated distribution across MVPD and dMVPD partners. I’m happy to walk anyone through the file live, but for now, the screen captures below highlight the scope and depth of the system—from content rails and metadata hierarchies to pictograms, artwork safe areas, program cells, and cross-platform playback UX. Each frame represents not just a visual, but a rule-driven foundation designed to scale across broadcast partners, devices, and Olympic programming.
+			</p>
+		</div>  
+	</section>
+
+    <section>
+      <h2>Root</h2>
+      <div class="images">
+        <div class="item">
+          <div class="path">1_Cover.png</div>
+          <img src="1_Cover.png" alt="1_Cover">
+        </div>
+        <div class="item">
+          <div class="path">3_1_wayfinding.png</div>
+          <img src="3_1_wayfinding.png" alt="3_1_wayfinding">
+        </div>
+        <div class="item">
+          <div class="path">3_2_Specs.png</div>
+          <img src="3_2_Specs.png" alt="3_2_Specs">
+        </div>
+        <div class="item">
+          <div class="path">3_3_Colors.png</div>
+          <img src="3_3_Colors.png" alt="3_3_Colors">
+        </div>
+        <div class="item">
+          <div class="path">3_4_Materials.png</div>
+          <img src="3_4_Materials.png" alt="3_4_Materials">
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>1_Styles / 4_Typography</h2>
+      <div class="images">
+        <div class="item"><div class="path">4_Typography/Typography.png</div><img src="1_Styles/4_Typography/Typography.png" alt="Typography"></div>
+        <div class="item"><div class="path">4_Typography/Typography-1.png</div><img src="1_Styles/4_Typography/Typography-1.png" alt="Typography-1"></div>
+        <div class="item"><div class="path">4_Typography/Typography-2.png</div><img src="1_Styles/4_Typography/Typography-2.png" alt="Typography-2"></div>
+        <div class="item"><div class="path">4_Typography/Typography-3.png</div><img src="1_Styles/4_Typography/Typography-3.png" alt="Typography-3"></div>
+        <div class="item"><div class="path">4_Typography/Typography-4.png</div><img src="1_Styles/4_Typography/Typography-4.png" alt="Typography-4"></div>
+        <div class="item"><div class="path">4_Typography/Typography-5.png</div><img src="1_Styles/4_Typography/Typography-5.png" alt="Typography-5"></div>
+        <div class="item"><div class="path">4_Typography/Typography-6.png</div><img src="1_Styles/4_Typography/Typography-6.png" alt="Typography-6"></div>
+        <div class="item"><div class="path">4_Typography/Typography-7.png</div><img src="1_Styles/4_Typography/Typography-7.png" alt="Typography-7"></div>
+        <div class="item"><div class="path">4_Typography/Typography-8.png</div><img src="1_Styles/4_Typography/Typography-8.png" alt="Typography-8"></div>
+        <div class="item"><div class="path">4_Typography/Typography-9.png</div><img src="1_Styles/4_Typography/Typography-9.png" alt="Typography-9"></div>
+        <div class="item"><div class="path">System Font Mobile Typography.png</div><img src="1_Styles/4_Typography/System Font Mobile Typography.png" alt="System Font Mobile Typography"></div>
+        <div class="item"><div class="path">System Font Desktop Typography.png</div><img src="1_Styles/4_Typography/System Font Desktop Typography.png" alt="System Font Desktop Typography"></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>1_Styles / 5_colors</h2>
+      <div class="images">
+        <div class="item"><div class="path">Base.png</div><img src="1_Styles/5_colors/Base.png" alt="Base"></div>
+        <div class="item"><div class="path">Peacock.png</div><img src="1_Styles/5_colors/Peacock.png" alt="Peacock"></div>
+        <div class="item"><div class="path">IOC.png</div><img src="1_Styles/5_colors/IOC.png" alt="IOC"></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>1_Styles / 6_Breakpoints</h2>
+      <div class="images">
+        <div class="item"><div class="path">Breakpoints.png</div><img src="1_Styles/6_Breakpoints/Breakpoints.png" alt="Breakpoints"></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>1_Styles / 7_Imagery</h2>
+      <div class="images">
+        <div class="item"><div class="path">Site Background.png</div><img src="1_Styles/7_Imagery/Site Background.png" alt="Site Background"></div>
+        <div class="item"><div class="path">Sport Color Reference.png</div><img src="1_Styles/7_Imagery/Sport Color Reference.png" alt="Sport Color Reference"></div>
+        <div class="item"><div class="path">Null State.png</div><img src="1_Styles/7_Imagery/Null State.png" alt="Null State"></div>
+        <div class="item"><div class="path">Athlete Hub.png</div><img src="1_Styles/7_Imagery/Athlete Hub.png" alt="Athlete Hub"></div>
+        <div class="item"><div class="path">Avatars.png</div><img src="1_Styles/7_Imagery/Avatars.png" alt="Avatars"></div>
+      </div>
+      <div class="sub">
+        <h3 style="margin:10px 0 6px;color:var(--muted)">Paris / Team-vs-Team / Soccer</h3>
+        <div class="images">
+          <div class="item"><div class="path">AUS vs USA.png</div><img src="1_Styles/7_Imagery/Paris/Team-vs-Team/Soccer/AUS vs USA.png" alt="AUS vs USA"></div>
+          <div class="item"><div class="path">BRA vs JPN.png</div><img src="1_Styles/7_Imagery/Paris/Team-vs-Team/Soccer/BRA vs JPN.png" alt="BRA vs JPN"></div>
+          <div class="item"><div class="path">BRA vs ESP.png</div><img src="1_Styles/7_Imagery/Paris/Team-vs-Team/Soccer/BRA vs ESP.png" alt="BRA vs ESP"></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>2_Elements</h2>
+      <div class="images">
+        <div class="item"><div class="path">1_Icons / Icons.png</div><img src="2_Elements/1_Icons/Icons.png" alt="Icons"></div>
+        <div class="item"><div class="path">2_Badging / Badging.png</div><img src="2_Elements/2_Badging/Badging.png" alt="Badging"></div>
+        <div class="item"><div class="path">3_Inputs / Buttons.png</div><img src="2_Elements/3_Inputs/Buttons.png" alt="Buttons"></div>
+        <div class="item"><div class="path">3_Inputs / Navigation.png</div><img src="2_Elements/3_Inputs/Navigation.png" alt="Navigation"></div>
+        <div class="item"><div class="path">3_Inputs / Navigation2.png</div><img src="2_Elements/3_Inputs/Navigation2.png" alt="Navigation2"></div>
+        <div class="item"><div class="path">3_Inputs / Toggles.png</div><img src="2_Elements/3_Inputs/Toggles.png" alt="Toggles"></div>
+        <div class="item"><div class="path">4_Fields / Search.png</div><img src="2_Elements/4_Fields/Search.png" alt="Search"></div>
+      </div>
+    </section>
+
+    <footer style="color:var(--muted);font-size:13px;margin-top:30px">Gallery generated: sections show directory titles; images are referenced relative to this file.</footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>NBCUniversal Olympic Content Experience – Case Study | Chris Parsell</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="How Chris Parsell led the content strategy and UX writing for NBCUniversal's multi-platform Olympic streaming experience."
+  />
+
+  <style>
+    :root {
+      --bg: #05060a;
+      --bg-alt: #0d1018;
+      --panel: #111827;
+      --accent: #38bdf8;
+      --accent-soft: rgba(56, 189, 248, 0.18);
+      --text: #f9fafb;
+      --muted: #9ca3af;
+      --border-subtle: #1f2933;
+      --radius-lg: 18px;
+      --radius-pill: 999px;
+      --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.5);
+      --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+        "Inter", "Helvetica Neue", Arial, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: var(--font-sans);
+      background: radial-gradient(circle at top left, #111827, #020617 55%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .cs-shell {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 32px 20px 80px;
+    }
+
+    header {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      gap: 32px;
+      align-items: center;
+      margin-bottom: 48px;
+    }
+
+    @media (max-width: 800px) {
+      header {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 14px;
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--accent-soft);
+      background: rgba(15, 23, 42, 0.7);
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .pill-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: var(--accent);
+    }
+
+    h1 {
+      font-size: clamp(2.4rem, 4vw, 3rem);
+      margin: 16px 0 12px;
+    }
+
+    h1 span.highlight {
+      color: var(--accent);
+    }
+
+    .subtitle {
+      max-width: 32rem;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 18px;
+      padding: 18px 20px;
+      border-radius: var(--radius-lg);
+      background: linear-gradient(135deg, #020617, #0b1120);
+      border: 1px solid var(--border-subtle);
+    }
+
+    .meta-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+
+    .meta-value {
+      font-size: 0.95rem;
+    }
+
+    .hero-card {
+      border-radius: var(--radius-lg);
+      background: radial-gradient(circle at top, #0f172a, #020617);
+      border: 1px solid var(--border-subtle);
+      padding: 20px;
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-tagline {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .hero-kpi {
+      margin-top: 16px;
+      display: grid;
+      gap: 10px;
+      font-size: 0.85rem;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      border-radius: var(--radius-pill);
+      padding: 4px 10px;
+      font-size: 0.75rem;
+      border: 1px solid var(--accent-soft);
+      color: var(--accent);
+      background: rgba(15, 23, 42, 0.9);
+    }
+
+    .hero-orbit {
+      position: absolute;
+      inset: auto -40px -60px auto;
+      width: 210px;
+      height: 210px;
+      border-radius: 999px;
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      background: radial-gradient(circle at top, rgba(56, 189, 248, 0.13), transparent);
+      filter: blur(0.2px);
+    }
+
+    main {
+      display: grid;
+      grid-template-columns: minmax(0, 3.2fr) minmax(0, 1.8fr);
+      gap: 32px;
+    }
+
+    @media (max-width: 960px) {
+      main {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    section {
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      margin-bottom: 8px;
+    }
+
+    h3 {
+      font-size: 1.05rem;
+      margin-top: 20px;
+      margin-bottom: 6px;
+    }
+
+    p {
+      margin: 0 0 8px;
+      font-size: 0.98rem;
+    }
+
+    ul {
+      padding-left: 1.1rem;
+      margin: 4px 0 10px;
+      font-size: 0.95rem;
+    }
+
+    li + li {
+      margin-top: 4px;
+    }
+
+    .aside {
+      position: sticky;
+      top: 24px;
+      align-self: flex-start;
+      border-radius: var(--radius-lg);
+      padding: 18px 18px 20px;
+      background: linear-gradient(145deg, #020617, #020617 45%, #0b1120);
+      border: 1px solid var(--border-subtle);
+      box-shadow: var(--shadow-soft);
+      font-size: 0.9rem;
+    }
+
+    .aside h3 {
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .badge-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 8px;
+    }
+
+    .badge {
+      padding: 3px 8px;
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--border-subtle);
+      background: rgba(15, 23, 42, 0.7);
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    .callout {
+      margin: 20px 0;
+      padding: 14px 14px 14px 16px;
+      border-radius: var(--radius-lg);
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid var(--accent-soft);
+      font-size: 0.9rem;
+    }
+
+    .callout-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--accent);
+      margin-bottom: 6px;
+      display: block;
+    }
+
+    .image-frame {
+      margin: 16px 0 4px;
+      border-radius: var(--radius-lg);
+      border: 1px dashed var(--border-subtle);
+      padding: 10px;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--muted);
+      background: rgba(15, 23, 42, 0.7);
+    }
+
+    .section-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+
+    footer {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border-subtle);
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="cs-shell">
+    <header>
+      <div>
+        <div class="pill">
+          <span class="pill-dot"></span>
+          Content Design · Case Study
+        </div>
+
+        <h1>
+          NBCUniversal Olympic
+          <span class="highlight">Content Experience</span>
+        </h1>
+
+        <p class="subtitle">
+          Designing a unified content language, metadata model, and UX writing system
+          for how millions of fans discover, watch, and rewatch the Olympic Games
+          across Peacock, NBC Sports, MVPDs, and global streaming partners.
+        </p>
+
+        <div class="meta-grid">
+          <div>
+            <div class="meta-label">Role</div>
+            <div class="meta-value">Senior Product UX Manager · Content & Experience Strategy</div>
+          </div>
+          <div>
+            <div class="meta-label">Company</div>
+            <div class="meta-value">NBCUniversal · Content Distribution / Platform Experience</div>
+          </div>
+          <div>
+            <div class="meta-label">Focus</div>
+            <div class="meta-value">Content design, metadata, UX writing, partner experience</div>
+          </div>
+          <div>
+            <div class="meta-label">Platforms</div>
+            <div class="meta-value">Peacock, NBC Sports, MVPDs, FAST, OTT partners</div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="hero-card">
+        <p class="hero-tagline">
+          I led the content experience strategy for a multi-platform Olympic ecosystem:
+          aligning metadata, UX copy, and partner guidelines so that
+          “Where do I watch?” always had a clear, reassuring answer.
+        </p>
+
+        <div class="hero-kpi">
+          <span class="hero-badge">System, not just screens</span>
+          <span>• Unified naming and content hierarchy across dozens of partner surfaces.</span>
+          <span>• Clearer language around live vs replay, highlights, and medal coverage.</span>
+          <span>• A reusable playbook for future Olympic Games and tentpole events.</span>
+        </div>
+
+        <div class="hero-orbit"></div>
+      </aside>
+    </header>
+
+    <main>
+      <article>
+        <section>
+          <div class="section-label">01 · Overview</div>
+          <h2>Setting the stage</h2>
+          <p>
+            The modern Olympic Games are not a single product; they’re a constantly
+            shifting constellation of live events, replays, highlights, athlete stories,
+            and medal updates distributed across dozens of platforms. My work at
+            NBCUniversal focused on turning that constellation into a coherent content
+            experience: one shared language, one metadata backbone, and a set of
+            UX writing patterns that could travel anywhere the Games appeared.
+          </p>
+          <p>
+            I partnered with metadata engineering, Olympics editorial, marketing,
+            Peacock UX, and external distribution partners to define how we name,
+            group, and describe Olympic content so that fans know what they’re
+            getting before they ever hit “Watch.”
+          </p>
+        </section>
+
+        <section>
+          <div class="section-label">02 · Challenge</div>
+          <h2>The problem we needed to solve</h2>
+          <p>
+            Before we aligned on a shared content model, every platform told a
+            slightly different version of the Olympic story. Event names were
+            truncated or inconsistent, “live” and “replay” were labelled in
+            conflicting ways, medal coverage surfaced differently, and terminology
+            for formats and rounds varied across surfaces.
+          </p>
+          <p>
+            For fans, this meant friction: “Is this live?”, “Is this the full event
+            or just a clip?”, “Where do I see medal standings?”.
+            For partners and internal teams, it meant additional support burden,
+            rushed last-minute fixes, and duplicate work.
+          </p>
+
+          <div class="callout">
+            <span class="callout-label">Design question</span>
+            How might we create a content and language system that makes Olympic
+            coverage predictable and understandable, no matter where a fan presses play?
+          </div>
+
+          <div class="image-frame">
+            [Placeholder: Diagram of fragmented partner experiences before the new model.]
+          </div>
+        </section>
+
+        <section>
+          <div class="section-label">03 · My role</div>
+          <h2>What I owned</h2>
+
+          <h3>Content architecture & metadata model</h3>
+          <p>
+            I mapped the full Olympic content lifecycle from scheduling to playout
+            to partner ingestion, then defined a hierarchy for how events, replays,
+            highlights, medal hubs, sport hubs, and athlete hubs relate to one another.
+          </p>
+          <ul>
+            <li>Established naming conventions for events, rounds, and sessions.</li>
+            <li>Defined metadata fields required for consistent ingestion and display.</li>
+            <li>Worked with engineering to ensure the model was technically feasible and scalable.</li>
+          </ul>
+
+          <h3>UX writing & language system</h3>
+          <p>
+            I created a shared vocabulary for key fan questions:
+            What is this? Is it live? Is this the whole thing? What happens if I click?
+          </p>
+          <ul>
+            <li>
+              Standardized action labels (e.g. <em>Watch Live</em>, <em>Full Replay</em>,
+              <em>Highlights</em>, <em>Medal Recap</em>).
+            </li>
+            <li>
+              Developed patterns for schedule, blackout, and rights messaging in plain language.
+            </li>
+            <li>
+              Wrote guidance for how to describe complex sports formats and multi-session events.
+            </li>
+          </ul>
+
+          <h3>Partner-facing guidelines & playbook</h3>
+          <p>
+            To make the system usable beyond NBCU’s walls, I translated it into
+            a practical “Platform Experience Playbook” for partners and internal teams.
+          </p>
+          <ul>
+            <li>Content and copy specs for partner engineering teams.</li>
+            <li>Usage examples showing best- and worst-case implementations.</li>
+            <li>
+              Edge-case handling: what copy appears when schedules change, events overlap,
+              or streams are temporarily unavailable.
+            </li>
+          </ul>
+
+          <div class="image-frame">
+            [Placeholder: Screenshot or diagram from the Platform Experience Guidelines or Partner Playbook.]
+          </div>
+        </section>
+
+        <section>
+          <div class="section-label">04 · Approach</div>
+          <h2>How we designed the system</h2>
+
+          <h3>1. Mapping the ecosystem</h3>
+          <p>
+            I began by interviewing stakeholders across editorial, product, data,
+            engineering, and partner operations.
+            Together we mapped how an event moved: from initial schedule, to live feed,
+            to replay, to highlight reels, to packaged partner feeds.
+          </p>
+
+          <h3>2. Finding the seams and failure points</h3>
+          <p>
+            We audited how different partners labeled and surfaced Olympic content.
+            We found gaps such as:
+          </p>
+          <ul>
+            <li>Inconsistent “Live” and “Replay” indicators.</li>
+            <li>Medal coverage hidden behind generic labels like “News” or “Clips”.</li>
+            <li>Long event titles truncated without context.</li>
+            <li>Confusing or missing copy in cases of blackouts and schedule changes.</li>
+          </ul>
+
+          <h3>3. Designing reusable content patterns</h3>
+          <p>
+            From there, I designed content patterns that could withstand different
+            platform layouts and constraints:
+          </p>
+          <ul>
+            <li>
+              Short, descriptive titles with predictable structures
+              (Sport · Round · Country vs Country).
+            </li>
+            <li>
+              Clear sublabels and badges to distinguish Live, Replay, and Highlight.
+            </li>
+            <li>
+              Microcopy templates for medal hubs and athlete pages that balanced storytelling with scannability.
+            </li>
+          </ul>
+
+          <h3>4. Testing and refinement</h3>
+          <p>
+            We reviewed patterns with partner UX teams and internal stakeholders,
+            refining the language and rules until they were both
+            technically implementable and editorially faithful.
+          </p>
+
+          <div class="image-frame">
+            [Placeholder: Sample before/after of event card language or medal hub copy.]
+          </div>
+        </section>
+
+        <section>
+          <div class="section-label">05 · Outcomes</div>
+          <h2>What changed for fans & partners</h2>
+
+          <h3>For fans</h3>
+          <ul>
+            <li>
+              Easier to tell at a glance whether something was live, a full replay, or a short highlight.
+            </li>
+            <li>
+              More predictable navigation into sport hubs, athlete hubs, and medal coverage.
+            </li>
+            <li>
+              Clearer explanations of event formats, so fewer “What am I watching?” moments.
+            </li>
+          </ul>
+
+          <h3>For partners & internal teams</h3>
+          <ul>
+            <li>
+              Reduced ambiguity in how Olympic content should be labeled and grouped on their platforms.
+            </li>
+            <li>
+              Faster onboarding for partner engineering teams using the shared playbook and examples.
+            </li>
+            <li>
+              A reusable framework for future Games and other tentpole events.
+            </li>
+          </ul>
+
+          <div class="callout">
+            <span class="callout-label">System impact</span>
+            The work shifted NBCUniversal from “fixing language one surface at a time”
+            to operating with a shared content model that can scale across events,
+            partners, and years.
+          </div>
+        </section>
+
+        <section>
+          <div class="section-label">06 · Reflection</div>
+          <h2>What this taught me about content design at scale</h2>
+          <p>
+            This project reinforced that metadata and language are not backstage concerns;
+            they’re the backbone of how fans experience live events. The most visible UI
+            moments depend on invisible foundations: naming systems, content hierarchies,
+            and clear rules about how we talk about the product.
+          </p>
+          <p>
+            As a content designer working in a product leadership role, I learned how to
+            act as translator and architect: turning editorial ambition into structures
+            that engineering can build, partners can implement, and fans can instantly understand.
+          </p>
+        </section>
+
+        <footer>
+          Interested in how this work connects to my AWS search & navigation experience?
+          I’m happy to walk through how these systems complement each other in an interview.
+        </footer>
+      </article>
+
+      <aside class="aside">
+        <h3>Snapshot</h3>
+        <p>
+          I led the content design and experience strategy that allowed NBCUniversal’s Olympic
+          coverage to feel coherent across dozens of partner platforms, despite wildly different
+          layouts, capabilities, and business constraints.
+        </p>
+
+        <h3>Disciplines</h3>
+        <div class="badge-list">
+          <span class="badge">Content design</span>
+          <span class="badge">UX writing</span>
+          <span class="badge">Content architecture</span>
+          <span class="badge">Metadata strategy</span>
+          <span class="badge">Information hierarchy</span>
+          <span class="badge">Design systems</span>
+          <span class="badge">Partner experience</span>
+        </div>
+
+        <h3>Collaboration</h3>
+        <ul>
+          <li>Metadata & platform engineering</li>
+          <li>Olympics editorial & marketing</li>
+          <li>Peacock & NBC Sports product</li>
+          <li>External MVPD & OTT partners</li>
+        </ul>
+      </aside>
+    </main>
+  </div>
+</body>
+</html>

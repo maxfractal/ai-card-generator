@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1GG11TKL4C"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-1GG11TKL4C');
+  </script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ISLT — Enhanced International Shopping List Test | Chris Parsell</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Bebas+Neue&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Shared portfolio stylesheet -->
+  <link rel="stylesheet" href="./../../assets/style/21c-portfolio.css">
+</head>
+<body>
+  <!-- HERO (gradient-only hero, same pattern as Lila) -->
+  <header class="hero">
+    <div class="hero-content">
+      <div class="eyebrow">Case Study — Clinical UX</div>
+      <h1>Improving UX for Cognitive Testing in Clinical Trials</h1>
+
+      <div class="nav">
+        <a href="../../index.html">Portfolio</a> |
+        <a href="../../../index.html">Home</a>
+      </div>
+
+      <p>
+        Enhancing Cogstate’s core cognitive assessment — redesigning the International Shopping List Test
+        (ISLT) to reduce data errors, simplify administration, and modernize the experience for today’s Clinical Trial Managers.
+      </p>
+
+      <div style="margin-top:12px">
+        <span class="tag">Clinical UX</span>
+        <span class="tag">User Research</span>
+        <span class="tag">Tablet App</span>
+        <span class="tag">Interaction Design</span>
+        <span class="tag">Usability Testing</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <!-- OBJECTIVE / ROLE -->
+    <section class="grid g-2">
+      <div class="panel">
+        <h2>Objective</h2>
+        <p>
+          The Cogstate International Shopping List Test (ISLT) is a word list learning game used in clinical
+          trials to detect cognitive decline over time — and one of Cogstate’s core products. I was tasked
+          with researching and updating both the UX and UI to better support raters administering the test
+          and reduce data errors in the field.
+        </p>
+        <ul>
+          <li><strong>Client:</strong> Cogstate</li>
+          <li><strong>Role:</strong> Lead UX Designer</li>
+          <li><strong>Scope:</strong> Research, UX strategy, interaction design, UI modernization, usability testing</li>
+        </ul>
+      </div>
+
+      <div class="panel">
+        <h2>Problem</h2>
+        <p class="callout">
+          A 2016 tablet version of ISLT was generating severe data errors in several clinical trials — not
+          because of the science, but because of the interface.
+        </p>
+        <p>
+          Through user interviews and customer support logs, I traced many of the issues back to the
+          raters (clinicians) administering the game:
+        </p>
+        <ul>
+          <li>Small, dense UI elements led to frequent mis-taps and incorrect data entry.</li>
+          <li>Raters struggled to know which phase of the test they were in or what came next.</li>
+          <li>The overall experience felt “like software from the ’80s,” undermining trust and ease-of-use.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- GOAL -->
+    <section class="panel">
+      <h2>Goal</h2>
+      <p>
+        The primary goal was to rethink the UI so raters could no longer “accidentally” input the wrong
+        data — while addressing broader pain points around navigation, onboarding, and session flow.
+      </p>
+      <ul>
+        <li>Reduce data errors during test administration.</li>
+        <li>Give raters clear context: where they are in the session and what remains.</li>
+        <li>Simplify onboarding and startup so raters don’t have to rely on outdated manuals.</li>
+        <li>Modernize the look and feel to better match Cogstate’s brand and current expectations.</li>
+      </ul>
+    </section>
+
+    <!-- USER RESEARCH -->
+    <section class="panel">
+      <h2>User Research</h2>
+      <p>
+        I conducted a series of 30-minute interviews with 11 Rater Trainers and two internal support
+        staff, all with at least one year of experience using the app. After synthesizing the interviews
+        and reviewing support tickets, five primary pain points emerged:
+      </p>
+
+      <ul>
+        <li>Raters were often unsure which phase of the test they were in.</li>
+        <li>The experience felt disconnected between phases, and it was unclear how to proceed.</li>
+        <li>Recording responses was difficult for raters with “fat fingers” on dense tap targets.</li>
+        <li>Figures and findings were difficult to read during a live test session.</li>
+        <li>The overall look and feel felt dated — “like software from the 80s.”</li>
+      </ul>
+    </section>
+
+    <!-- WHAT IT WAS -->
+    <section class="panel">
+      <h2>Before: What it was</h2>
+      <p>
+        The original ISLT app was underperforming in clinical studies and generating avoidable data
+        errors. The interface was dense and visually dated, with small tap targets, minimal guidance,
+        and a disjointed flow that didn’t align with how raters worked during a visit.
+      </p>
+      <p>
+        Usability testing revealed that raters frequently leaned on old user manuals just to complete
+        basic tasks in the app — a signal that the product’s mental model didn’t match their reality.
+      </p>
+
+      <div class="panel-light--row" style="margin-top:12px;">
+        <img
+          src="https://cdn.prod.website-files.com/61303901cfef18423771ae5a/6163baa4102230009e353880_Screenshot%202019-03-11%2011.47.24.png"
+          alt="Original ISLT interface showing dense layout and small controls"
+        >
+        <img
+          src="https://cdn.prod.website-files.com/61303901cfef18423771ae5a/6163baa52f95b1e65f350b38_Screenshot%202019-03-11%2011.47.54.png"
+          alt="Original ISLT interface with complex data entry table"
+        >
+        <img
+          src="https://cdn.prod.website-files.com/61303901cfef18423771ae5a/6163baa4dd9e824a898c5a9a_Screenshot%202019-03-11%2011.48.33.png"
+          alt="Original ISLT screen with dated visual styling"
+        >
+        <img
+          src="https://cdn.prod.website-files.com/61303901cfef18423771ae5a/6163baa50e23f27d6d2f296b_Screenshot%202019-03-11%2011.48.07.png"
+          alt="Original ISLT reporting or session view"
+        >
+      </div>
+    </section>
+
+    <!-- WHAT I DESIGNED -->
+    <section class="panel">
+      <h2>After: What I designed</h2>
+      <p>
+        I designed a cleaner, more modern interface that not only reduced incoming data errors
+        but also gave clinicians clearer context: which stage they were in, how far they had to
+        go, and options for pausing or adjusting mid-game.
+      </p>
+      <p>
+        The new design emphasized larger, more forgiving controls, guided phase transitions,
+        and a more legible presentation of findings during live sessions.
+      </p>
+
+      <div class="panel-light--row" style="margin-top:12px;">
+        <img
+          src="https://cdn.prod.website-files.com/61303901cfef18423771ae5a/6163bcd6076fd614970677d7_round%201%20recall%200.svg"
+          alt="Redesigned ISLT recall interface"
+        >
+        <img
+          src="https://cdn.prod.website-files.com/61303901cfef18423771ae5a/6163bbd0caa8788ba34d926b_islt-ipad.png"
+          alt="ISLT redesigned on tablet, full-screen mode"
+        >
+      </div>
+      <p style="color:#9aa3af; font-size:13px; margin-top:6px;">
+        Left: simplified recall input. Right: full-screen mode for tablet/desktop, and ISLT embedded
+        in the broader Cogstate Solution Platform.
+      </p>
+    </section>
+
+    <!-- WHAT IS ISLT? -->
+    <section class="panel-light">
+      <h2 style="color: #33017f;">What is the ISLT?</h2>
+      <div class="grid g-2">
+        <div>
+          <p style="color: #33017f;">
+            The Cogstate International Shopping List Test (ISLT) is a word list learning game used
+            in clinical trials to measure cognitive decline over time.
+          </p>
+          <p style="color: #33017f;">
+            Each session consists of 3–4 rounds. In each round, a clinician reads the same 12 nouns
+            aloud, then the participant recalls as many words as they can. Both the reading and the
+            recall make up a single round.
+          </p>
+          <p style="color: #33017f;">
+            There is a 15-minute break between each round, with a final delayed recall around an hour
+            later. The goal is to measure episodic memory across global clinical trials with
+            standardized administration and cross-cultural appropriateness.
+          </p>
+        </div>
+        <div>
+          <img
+            src="https://cdn.prod.website-files.com/61303901cfef18423771ae5a/61605d2bfc7f67a4ab346a81_round-diagramv2.png"
+            alt="Diagram illustrating ISLT rounds and timing"
+            style="width:100%; border-radius:14px;"
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- WIREFLOWS: LOGIN & LANDING -->
+    <section class="panel">
+      <h2>Wireflow: Login &amp; Landing</h2>
+      <p>
+        I mapped the login and landing flows to make it easier for raters to see upcoming visits,
+        access the correct subject, and launch directly into the appropriate test without hunting
+        through nested menus.
+      </p>
+
+      <img
+        src="https://cdn.prod.website-files.com/61303901cfef18423771ae5a/61645e7ffcc47c027dd8e954_1%20login.svg"
+        alt="ISLT login wireframe"
+        style="width:100%; border-radius:14px; margin-top:12px;"
+      >
+
+      <div class="panel-light--row" style="margin-top:18px;">
+        <img
+          src="https://cdn.prod.website-files.com/61303901cfef18423771ae5a/6164634439c7cc3259aff9b7_2%20landing%20no%20sidenav%20cop%20bluey.svg"
+          alt="Landing screen without sidenav"
+        >
+        <img
+          src="https://cdn.prod.website-files.com/61303901cfef18423771ae5a/6164633b1c3054963b79b125_2%20landing%20w%20sidenav.svg"
+          alt="Landing screen with sidenav for navigation"
+        >
+      </div>
+    </section>
+
+    <!-- START GAME: ROUND 1 READ PHASE -->
+    <section class="panel">
+      <h2>Start Game — Round 1 Read Phase</h2>
+      <p>
+        The read phase needed to guide raters through reading each word clearly, pacing the session,
+        and giving them control to pause or resume without losing context.
+      </p>
+
+      <div class="panel-light--row" style="margin-top:8px;">
+        <img
+          src="https://cdn.prod.website-files.com/61303901cfef18423771ae5a/61646c63bc8e5f65606983f3_round%201%20recall%20pre%20copy%202.svg"
+          alt="Pre-read confirmation screen"
+        >
+        <img
+          src="https://cdn.prod.website-files.com/61303901cfef18423771ae5a/61646c1493b56abe7c198cc3_3.3B%20Subject%20ISLT%20--%20READ%20full%20screen%20SHAMPOO.svg"
+          alt="Read phase full-screen example"
+        >
+      </div>
+
+      <div class="panel-light--row" style="margin-top:8px;">
+        <img
+          src="https://cdn.prod.website-files.com/61303901cfef18423771ae5a/61646c1426c29818284ac8ba_3.3B%20Subject%20ISLT%20--%20READ%20full%20screen%20CHOCLATE.svg"
+          alt="Read phase alternate screen"
+        >
+        <img
+          src="https://cdn.prod.website-files.com/61303901cfef18423771ae5a/61646c1bf6dc0441e34e8809_3.4%20Subject%20ISLT%20--%20READ%20PAUSE.svg"
+          alt="Pause state during read phase"
+        >
+      </div>
+
+      <div class="panel-light--row" style="margin-top:8px;">
+        <img
+          src="https://cdn.prod.website-files.com/61303901cfef18423771ae5a/61646f52dfa7cd01d23c9683_3.3B%20Subject%20ISLT%20--%20READ%20full%20screen%20TEA.svg"
+          alt="Read phase example with another word"
+        >
+        <img
+          src="https://cdn.prod.website-files.com/61303901cfef18423771ae5a/6164704213032e0be1f1742b_round%201%20read%20succss.svg"
+          alt="Round 1 read success screen"
+        >
+      </div>
+
+      <img
+        src="https://cdn.prod.website-files.com/61303901cfef18423771ae5a/61646f17f3c9e802ad49e027_round%201%20read%20timed%20delay.svg"
+        alt="Timed delay screen between rounds"
+        style="width:100%; border-radius:14px; margin-top:16px;"
+      >
+    </section>
+
+    <!-- IN-GAME: RECALL PHASE -->
+    <section class="panel">
+      <h2>In-Game — Recall Phase</h2>
+      <p>
+        The recall phase focused on making it easy for raters to quickly capture verbal responses,
+        correct mistakes, and see progress across the 12-word list without introducing new sources
+        of error.
+      </p>
+
+      <div class="panel-light--row" style="margin-top:8px;">
+        <img
+          src="https://cdn.prod.website-files.com/61303901cfef18423771ae5a/6164747c55b128249cc8df10_round%201%20read%200%20confirm%20subject.svg"
+          alt="Confirm subject screen"
+        >
+        <img
+          src="https://cdn.prod.website-files.com/61303901cfef18423771ae5a/6164747cd3bd5b072d75e4a0_round%201%20read%201%20start.svg"
+          alt="Recall phase start screen"
+        >
+      </div>
+
+      <div class="panel-light--row" style="margin-top:8px;">
+        <img
+          src="https://cdn.prod.website-files.com/61303901cfef18423771ae5a/6164747c2aa66b62a868ccca_3.0.0%20ISLT%20Diagram.svg"
+          alt="Diagram of ISLT recall logic"
+        >
+        <img
+          src="https://cdn.prod.website-files.com/61303901cfef18423771ae5a/6164747c3d5d1cc923e78588_3.6.4%20Subject%20ISLT%20Recall%20error%20audio%201.svg"
+          alt="Audio error prompt during recall"
+        >
+      </div>
+
+      <div class="panel-light--row" style="margin-top:8px;">
+        <img
+          src="https://cdn.prod.website-files.com/61303901cfef18423771ae5a/6164747b55b1284454c8df0f_3.6.4%20Subject%20ISLT%20Recall%20error%20audio%202%20Multiple.svg"
+          alt="Multiple audio error state"
+        >
+        <img
+          src="https://cdn.prod.website-files.com/61303901cfef18423771ae5a/6164751d8cf7d222d276549e_round%201%20read%205%20success.svg"
+          alt="Recall success screen"
+        >
+      </div>
+
+      <div class="panel-light--row" style="margin-top:8px;">
+        <img
+          src="https://cdn.prod.website-files.com/61303901cfef18423771ae5a/61646c210c310e194467f044_Test%20Completion%20screen.svg"
+          alt="Test completion screen"
+        >
+        <img
+          src="https://cdn.prod.website-files.com/61303901cfef18423771ae5a/6164747c19369b3812738a1a_3.6.4%20Subject%20ISLT%20Recall%20error%20audio%202%20Multiple%20Copy.svg"
+          alt="Alternate error handling screen"
+        >
+      </div>
+
+      <img
+        src="https://cdn.prod.website-files.com/61303901cfef18423771ae5a/61575bdd40656a2b97d71897_3.6.4%20Subject%20ISLT%20Recall%20error%20audio%20Copy%202.svg"
+        alt="Additional recall error handling state"
+        style="width:100%; border-radius:14px; margin-top:16px;"
+      >
+
+      <p style="margin-top:16px;">
+        In the final in-game designs, we emphasized clarity of state (current round, remaining
+        steps), visibility of key controls, and forgiving patterns for handling mis-taps or
+        mis-heard responses.
+      </p>
+
+      <img
+        src="https://cdn.prod.website-files.com/61303901cfef18423771ae5a/6157651d3b5136adbde33bf5_islt-ingame.svg"
+        alt="ISLT in-game experience overview"
+        style="width:100%; border-radius:14px; margin-top:12px;"
+      >
+    </section>
+
+    <!-- STYLE GUIDE -->
+    <section class="panel-light">
+      <h2 class="purple-text" style="color:#33017f;">Style Guide</h2>
+      <p style="color: #33017f;">
+        The updated ISLT visual system aligned more closely with Cogstate’s brand while improving
+        readability and reducing cognitive load for raters working long days in clinical settings.
+      </p>
+
+      <img
+        src="https://cdn.prod.website-files.com/61303901cfef18423771ae5a/616480a1d3bd5bea7b7702ea_cogstate.svg"
+        alt="Cogstate visual identity elements"
+        style="width:100%; border-radius:14px; margin-top:12px;"
+      >
+      <p style="color:#33017f; font-size:13px; margin-top:6px;">
+        Updated styling for ISLT within the broader Cogstate brand system.
+      </p>
+
+      <div class="panel-light--row" style="margin-top:18px;">
+        <img
+          src="https://cdn.prod.website-files.com/61303901cfef18423771ae5a/616480a34db10322f62ac1c3_Branding.svg"
+          alt="Branding elements and components"
+        >
+        <img
+          src="https://cdn.prod.website-files.com/61303901cfef18423771ae5a/616480a20b55a32eb20384ce_UI%20Global%20Style.svg"
+          alt="Global UI style guide for ISLT"
+        >
+      </div>
+    </section>
+
+    <!-- REFLECTION -->
+    <section class="panel">
+      <h2>Reflection</h2>
+      <p>
+        ISLT is a great example of how small UX decisions can have outsized impact on scientific
+        outcomes. By centering raters’ real workflows — not just the ideal protocol — we reduced
+        data errors, sped up training, and modernized one of Cogstate’s most important tools
+        without compromising the integrity of the underlying assessment.
+      </p>
+    </section>
+
+    <footer style="margin-top:40px; color:#9aa3af; font-size:13px; text-align:center">
+      © Chris Parsell — ISLT Enhanced Version Case Study
+    </footer>
+  </div>
+
+  <!-- Scroll behavior: fade hero content after scroll (matches Lila/Olympics pattern without parallax) -->
+  <script>
+    document.addEventListener('scroll', () => {
+      const scrolled = window.scrollY > 80;
+      document.body.classList.toggle('scrolled', scrolled);
+    });
+  </script>
+</body>
+</html>

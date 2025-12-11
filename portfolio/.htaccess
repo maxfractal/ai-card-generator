@@ -1,0 +1,5 @@
+# Ensure original index.html is served before index.php
+DirectoryIndex index.html index.php
+
+# Optional: deny directory listings
+Options -Indexes

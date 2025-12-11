@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Platform Experience Guidelines – Case Study | Chris Parsell</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="How Chris Parsell authored and led the Platform Experience Guidelines for NBCUniversal partners to design consistent Olympic hubs."
+  />
+  <style>
+    :root {
+      --bg: #050816;
+      --bg-alt: #0b1020;
+      --panel: #111827;
+      --panel-alt: #020617;
+      --accent: #3a6ff7;
+      --accent-soft: rgba(58, 111, 247, 0.22);
+      --accent-gold: #f8d46b;
+      --text: #f9fafb;
+      --muted: #9ca3af;
+      --border-subtle: #1f2933;
+      --radius-lg: 18px;
+      --radius-pill: 999px;
+      --shadow-soft: 0 20px 45px rgba(0, 0, 0, 0.55);
+      --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+        "Inter", "Helvetica Neue", Arial, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: var(--font-sans);
+      background:
+        radial-gradient(circle at top left, #111827, #020617 55%) fixed,
+        linear-gradient(145deg, #020617, #020617);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .cs-shell {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 32px 20px 80px;
+    }
+
+    header {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      gap: 32px;
+      align-items: center;
+      margin-bottom: 48px;
+    }
+
+    @media (max-width: 900px) {
+      header {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 14px;
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--accent-soft);
+      background: rgba(15, 23, 42, 0.8);
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .pill-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: var(--accent);
+    }
+
+    h1 {
+      font-size: clamp(2.4rem, 4vw, 3rem);
+      margin: 16px 0 12px;
+    }
+
+    h1 span.highlight {
+      color: var(--accent);
+    }
+
+    .subtitle {
+      max-width: 32rem;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 18px;
+      padding: 18px 20px;
+      border-radius: var(--radius-lg);
+      background: linear-gradient(135deg, #020617, #0b1120);
+      border: 1px solid var(--border-subtle);
+      margin-top: 18px;
+    }
+
+    .meta-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+
+    .meta-value {
+      font-size: 0.95rem;
+    }
+
+    .hero-card {
+      border-radius: var(--radius-lg);
+      background: radial-gradient(circle at top, #0f172a, #020617);
+      border: 1px solid var(--border-subtle);
+      padding: 20px;
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-tagline {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .hero-kpi {
+      margin-top: 16px;
+      display: grid;
+      gap: 10px;
+      font-size: 0.86rem;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      border-radius: var(--radius-pill);
+      padding: 4px 10px;
+      font-size: 0.75rem;
+      border: 1px solid var(--accent-soft);
+      color: var(--accent);
+      background: rgba(15, 23, 42, 0.9);
+    }
+
+    .hero-orbit {
+      position: absolute;
+      inset: auto -52px -72px auto;
+      width: 230px;
+      height: 230px;
+      border-radius: 999px;
+      border: 1px solid rgba(58, 111, 247, 0.32);
+      background: radial-gradient(circle at top, rgba(58, 111, 247, 0.18), transparent);
+      filter: blur(0.2px);
+    }
+
+    main {
+      display: grid;
+      grid-template-columns: minmax(0, 3.2fr) minmax(0, 1.8fr);
+      gap: 32px;
+    }
+
+    @media (max-width: 960px) {
+      main {
+        grid-template-columns: 1fr;
+    }
+
+    }
+
+    section {
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      margin-bottom: 8px;
+    }
+
+    h3 {
+      font-size: 1.04rem;
+      margin-top: 20px;
+      margin-bottom: 6px;
+    }
+
+    p {
+      margin: 0 0 8px;
+      font-size: 0.98rem;
+    }
+
+    ul {
+      padding-left: 1.1rem;
+      margin: 4px 0 10px;
+      font-size: 0.95rem;
+    }
+
+    li + li {
+      margin-top: 4px;
+    }
+
+    .section-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+
+    .callout {
+      margin: 20px 0;
+      padding: 14px 14px 14px 16px;
+      border-radius: var(--radius-lg);
+      background: rgba(15, 23, 42, 0.94);
+      border: 1px solid var(--accent-soft);
+      font-size: 0.9rem;
+    }
+
+    .callout-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--accent);
+      margin-bottom: 6px;
+      display: block;
+    }
+
+    .image-frame {
+      margin: 16px 0 6px;
+      border-radius: var(--radius-lg);
+      border: 1px dashed var(--border-subtle);
+      padding: 10px;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--muted);
+      background: rgba(15, 23, 42, 0.7);
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+
+    .image-frame img {
+      flex: 1;
+      min-width: 280px;
+      height: auto;
+      border-radius: 8px;
+      display: block;
+    }
+
+    .aside {
+      position: sticky;
+      top: 24px;
+      align-self: flex-start;
+      border-radius: var(--radius-lg);
+      padding: 18px 18px 20px;
+      background: linear-gradient(145deg, #020617, #020617 45%, #0b1120);
+      border: 1px solid var(--border-subtle);
+      box-shadow: var(--shadow-soft);
+      font-size: 0.9rem;
+    }
+
+    .aside h3 {
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .badge-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 8px;
+    }
+
+    .badge {
+      padding: 3px 8px;
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--border-subtle);
+      background: rgba(15, 23, 42, 0.8);
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    footer {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border-subtle);
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <div class="cs-shell">
+    <header>
+      <div>
+        <div class="pill">
+          <span class="pill-dot"></span>
+          Platform Experience · Case Study
+        </div>
+
+        <h1>
+          Platform Experience
+          <span class="highlight">Guidelines</span>
+        </h1>
+
+        <p class="subtitle">
+          A unified framework I authored for partners to design consistent, IOC-compliant
+          Olympic hubs & destinations using NBCUniversal artwork, metadata, and enhanced
+          curation feeds.
+        </p>
+
+        <div class="meta-grid">
+          <div>
+            <div class="meta-label">Role</div>
+            <div class="meta-value">
+              Senior Product UX Manager · Author & Systems Lead
+            </div>
+          </div>
+          <div>
+            <div class="meta-label">Team</div>
+            <div class="meta-value">
+              NBCUniversal · Content Distribution · Platform Experience
+            </div>
+          </div>
+          <div>
+            <div class="meta-label">Scope</div>
+            <div class="meta-value">
+              Guidelines, content architecture, UX patterns, partner playbook
+            </div>
+          </div>
+          <div>
+            <div class="meta-label">Used By</div>
+            <div class="meta-value">
+              MVPD / vMVPD partners, streaming apps, Olympic destinations
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="hero-card">
+        <p class="hero-tagline">
+          The Platform Experience Guidelines became the playbook our distribution
+          partners used to build their 2024 Paris Olympics destinations: what to show,
+          how to structure it, and how to wire NBCU’s metadata and artwork into a clear,
+          compliant experience.
+        </p>
+
+        <div class="hero-kpi">
+          <span class="hero-badge">From document → ecosystem</span>
+          <span>• Defined end-to-end UX rules for Olympic hubs across partner platforms.</span>
+          <span>• Standardized curation hierarchy for live, upcoming, highlights, and replays.</span>
+          <span>• Connected metadata APIs, artwork sources, and IOC/USOPC requirements into one coherent guide.</span>
+        </div>
+
+        <div class="hero-orbit"></div>
+      </aside>
+    </header>
+
+    <main>
+      <article>
+        <section>
+          <div class="section-label">01 · Overview</div>
+          <h2>Designing a source of truth for partner experiences</h2>
+          <p>
+            For the 2024 Paris Olympics, millions of viewers would experience the Games
+            through partner platforms: MVPDs, vMVPDs, connected devices, FAST channels,
+            and more. Each of those platforms has its own layouts, ingestion workflows,
+            and constraints, but the Olympic experience still needed to feel coherent,
+            clear, and aligned with IOC and USOPC standards.
+          </p>
+          <p>
+            To make that possible, I authored the <em>Platform Experience Guidelines</em>:
+            a living document that explains how to design Olympic hubs, where to source
+            artwork and metadata, how to structure navigation, and how to curate rails
+            for live, upcoming, highlights, and full event replays. It’s both a content
+            design system and a product playbook for partner UX teams.
+          </p>
+        </section>
+
+        <section>
+          <div class="section-label">02 · The challenge</div>
+          <h2>One brand, many platforms, endless ways to diverge</h2>
+          <p>
+            Without a shared framework, each partner could interpret Olympic content
+            differently. Live events might be buried under generic “Sports” trays.
+            Highlights could be labeled as “clips” in some destinations and “news”
+            in others. Medal moments, featured athletes, and Team USA content might
+            be inconsistently surfaced or not surfaced at all.
+          </p>
+          <p>
+            On top of that, every destination needed to respect IOC and USOPC branding
+            constraints, while also fitting into the partner’s existing product patterns.
+            The risk was a fragmented landscape where the Olympic story felt different
+            everywhere, and NBCU teams had to answer the same design and metadata
+            questions again and again.
+          </p>
+
+          <div class="callout">
+            <span class="callout-label">Design problem</span>
+            How do we give partners enough guidance to create a consistent, compelling
+            Olympic destination—without prescribing a single rigid UI—across dozens of
+            different platforms and tech stacks?
+          </div>
+
+          <div class="image-frame">
+            <img src="assets/images/metadata_drift.png" alt="">
+          </div>
+        </section>
+
+        <section>
+          <div class="section-label">03 · My role</div>
+          <h2>Authoring the Platform Experience Guidelines</h2>
+
+          <h3>Defining the information architecture of the guide</h3>
+          <p>
+            I began by structuring the document itself as a product: an indexable,
+            skimmable experience that partners, engineers, and marketers could all
+            navigate quickly. It starts with why the guide exists and how IOC/USOPC
+            approval works, then walks through submission processes, design development,
+            and preferred formats for wireframes, annotations, and journey maps. :contentReference[oaicite:1]{index=1}
+          </p>
+
+          <h3>Connecting artwork, metadata, and UX</h3>
+          <p>
+            A large portion of the guidelines explains where Olympic artwork and metadata
+            come from (Gracenote, NBCU PX APIs, manual delivery, and the Paris 2024
+            Resource Site) and how those sources should be used to drive hubs, rails, and
+            thumbnails. I translated raw feed information into concrete rules:
+          </p>
+          <ul>
+            <li>Which artwork types to use for series, events, and VOD collections.</li>
+            <li>How to rely on Gracenote as the primary art + metadata source.</li>
+            <li>When and how to layer in PX’s enhanced metadata endpoints.</li>
+          </ul>
+
+          <h3>Establishing UX patterns and curation hierarchy</h3>
+          <p>
+            I defined the recommended hierarchy for Olympic destinations: prioritize live
+            programming and upcoming events above the fold; use dedicated rails for
+            full event replays; and highlight short-form and mid-form clips in separate,
+            clearly labeled trays. I then added examples and diagrams showing how this
+            hierarchy maps to real layouts.
+          </p>
+
+          <div class="image-frame">
+            [Placeholder: Screenshot or schematic of the guide’s index and major sections.]
+            <img src="assets/images/1_cover_PXGuidelinesv31_00.webp" alt="">
+            <img src="assets/images/2_pg6_PXGuidelinesv31_00.webp" alt="">
+            <img src="assets/images/3_pg_14_PXGuidelinesv31_00.webp" alt="">
+          </div>
+        </section>
+
+        <section>
+          <div class="section-label">04 · Designing the system</div>
+          <h2>From broadcast complexity to partner-friendly patterns</h2>
+
+          <h3>Clarifying content types</h3>
+          <p>
+            The guide begins with a content primer: live events, primetime programming,
+            event re-airs, full event replays, short-form highlights, and mid-form
+            extended highlights. By defining the full palette of Olympic content, partners
+            can make intentional decisions about what to feature and how to balance
+            long-form and short-form experiences. :contentReference[oaicite:2]{index=2}
+          </p>
+
+          <h3>Specifying artwork and metadata usage</h3>
+          <p>
+            I documented the four major video artwork types (series key art, episodic art,
+            VOD sport art, and event thumbnails) and showed how they should be applied in
+            rails, carousels, and hubs. Partners learn that Gracenote is the primary art
+            source, with PX APIs and the Paris 2024 Resource Site providing enhanced and
+            bespoke assets for special curation needs.
+          </p>
+
+          <h3>Designing Olympic hub layouts</h3>
+          <p>
+            The guidelines include annotated hub wireframes describing a typical “above
+            the fold” Olympic destination: a hero or marquee for live and upcoming events,
+            rails that distinguish clips from full event replays, and supporting navigation
+            for sports and athletes. I used callouts to show which metadata fields drive
+            each UI element.
+          </p>
+
+          <div class="image-frame">
+            [Placeholder: Example Olympic hub wireframe with metadata callouts.]
+          </div>
+        </section>
+
+        <section>
+          <div class="section-label">05 · Enhanced curation & discovery</div>
+          <h2>Using curated feeds to tell the Olympic story</h2>
+          <p>
+            Beyond basic schedules and replays, the guide introduces enhanced curation
+            tags that partners can use to build richer destinations:
+          </p>
+          <ul>
+            <li><strong>Medal Moments</strong>: trays and pages focused on medal-deciding events and ceremonies.</li>
+            <li><strong>Featured Athletes</strong>: a curated set of Team USA stars and other notable competitors.</li>
+            <li><strong>Team USA</strong>: content centered around American athletes and storylines.</li>
+            <li><strong>Must See</strong> and <strong>ICYMI</strong>: recent, defining, and spoiler-aware highlight collections.</li>
+          </ul>
+          <p>
+            I documented what these tags mean, how they’re exposed via PX endpoints, and
+            provided layout examples showing how partners can turn these feeds into
+            dedicated sections or trays without breaking narrative consistency.
+          </p>
+
+          <div class="image-frame">
+            [Placeholder: Diagram of trays for Medal Moments, Featured Athletes, Team USA, Must See, ICYMI.]
+          </div>
+        </section>
+
+        <section>
+          <div class="section-label">06 · UI elements & accessibility</div>
+          <h2>Design details that scale across destinations</h2>
+
+          <h3>Olympic pictograms as navigational building blocks</h3>
+          <p>
+            The guidelines encourage partners to use the official 2024 Paris Olympics
+            sport pictograms as filters or navigation, paired with clear text labels.
+            I provided recommendations on where to integrate them—sport rails, sport
+            hubs, or filter bars—and how to ensure they remain legible and inclusive. :contentReference[oaicite:3]{index=3}
+          </p>
+
+          <h3>Accessibility as a core requirement</h3>
+          <p>
+            The accessibility section emphasizes that Olympic and Paralympic experiences
+            must be usable by people with diverse abilities. I framed this not as an
+            afterthought, but as part of NBCUniversal’s core values—encouraging partners
+            to prioritize contrast, readable typography, clear focus states, and inclusive
+            motion and labeling.
+          </p>
+
+          <div class="image-frame">
+            [Placeholder: Example of a sports filter UI using pictograms + labels in an accessible way.]
+          </div>
+        </section>
+
+        <section>
+          <div class="section-label">07 · Partner workflow</div>
+          <h2>From first mock to IOC-ready destination</h2>
+          <p>
+            To make the guidelines actionable, I defined a clear partner workflow:
+          </p>
+          <ul>
+            <li><strong>Design development</strong> with access to PX UX and front-end leads.</li>
+            <li><strong>Virtual reviews</strong> of staging builds or interactive demos.</li>
+            <li><strong>Submission preparation</strong> with guidance on packaging hi-fidelity mocks and annotations.</li>
+            <li><strong>Final submission</strong> 45 business days before destinations go live.</li>
+            <li><strong>PX office hours</strong> during Trials and in the weeks leading into the Games for QA with real metadata.</li>
+          </ul>
+          <p>
+            This workflow meant partners weren’t just handed a PDF—they were supported
+            throughout the process, with the guidelines acting as the anchor for every
+            conversation.
+          </p>
+
+          <div class="image-frame">
+            [Placeholder: Timeline diagram of partner workflow from design → review → submission → launch.]
+          </div>
+        </section>
+
+        <section>
+          <div class="section-label">08 · Outcomes</div>
+          <h2>What the guidelines unlocked</h2>
+
+          <h3>For partners</h3>
+          <ul>
+            <li>A single, authoritative reference for Olympic UX decisions.</li>
+            <li>Clear expectations for artwork, metadata usage, and layout patterns.</li>
+            <li>Reduced back-and-forth with NBCU teams over details and edge cases.</li>
+          </ul>
+
+          <h3>For viewers</h3>
+          <ul>
+            <li>More predictable destinations, with live and upcoming programming easy to find.</li>
+            <li>Better discovery of medal moments, featured athletes, and Team USA stories.</li>
+            <li>Consistent labeling and content hierarchy across different services.</li>
+          </ul>
+
+          <h3>For NBCUniversal</h3>
+          <ul>
+            <li>Higher compliance with IOC/USOPC guidance and brand standards.</li>
+            <li>Reduced partner support overhead and fewer last-minute UX corrections.</li>
+            <li>A scalable template for future tentpole events like Milan Cortina 2026.</li>
+          </ul>
+
+          <div class="callout">
+            <span class="callout-label">System impact</span>
+            The Platform Experience Guidelines turned scattered tribal knowledge into a
+            structured reference that partners could rely on—shifting Olympic hub design
+            from ad hoc decisions to a repeatable, system-driven practice.
+          </div>
+        </section>
+
+        <section>
+          <div class="section-label">09 · Reflection</div>
+          <h2>What this taught me about platform experience design</h2>
+          <p>
+            Crafting these guidelines reinforced that platform experience work lives at
+            the intersection of UX, content strategy, metadata architecture, and partner
+            operations. It’s not enough to design a single “ideal” screen—you have to
+            design the language, rules, and workflows that help dozens of teams recreate
+            that quality in their own ecosystems.
+          </p>
+          <p>
+            As the author and owner of the Platform Experience Guidelines, I learned how
+            to translate complex technical and governance constraints into practical,
+            inspiring guidance that helps partners build better products and helps fans
+            find the moments that matter most.
+          </p>
+        </section>
+
+        <footer>
+          Curious how this framework connects to my Olympic content model and search/navigation work?
+          I’m happy to walk through the broader ecosystem design in a live conversation.
+        </footer>
+      </article>
+
+      <aside class="aside">
+        <h3>Snapshot</h3>
+        <p>
+          I authored the Platform Experience Guidelines used by NBCUniversal’s distribution
+          partners to design and launch IOC-compliant, metadata-driven Olympic hubs for
+          the 2024 Paris Games.
+        </p>
+
+        <h3>Disciplines</h3>
+        <div class="badge-list">
+          <span class="badge">Content design</span>
+          <span class="badge">UX guidelines</span>
+          <span class="badge">Metadata strategy</span>
+          <span class="badge">Design systems</span>
+          <span class="badge">Partner experience</span>
+          <span class="badge">Documentation</span>
+          <span class="badge">Accessibility</span>
+        </div>
+
+        <h3>Collaboration</h3>
+        <ul>
+          <li>Content Distribution & PX teams</li>
+          <li>Metadata & platform engineering</li>
+          <li>NBC Sports & Olympics editorial</li>
+          <li>Marketing & IOC/USOPC stakeholders</li>
+          <li>MVPD, vMVPD & streaming partners</li>
+        </ul>
+      </aside>
+    </main>
+  </div>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1GG11TKL4C"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1GG11TKL4C');
+</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chris Parsell Portfolio</title>
+  <link rel="stylesheet" href="../css/21cgeek.css">
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      background-color: #080e1e;
+      color: #e0e4f0;
+      margin: 0;
+      padding: 2rem;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .case h1 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: #e0e4f0;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+
+    li {
+      position: relative;
+      aspect-ratio: 3 / 2;
+      background: linear-gradient(145deg, #1a2340, #101830);
+      border-radius: 16px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    li:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.7),
+                  0 0 12px rgba(64, 128, 255, 0.25);
+    }
+
+    li a {
+      font-weight: 600;
+      font-size: 1rem;
+      color: #e8ebf7;
+      text-align: center;
+      display: block;
+      width: 100%;
+      height: 100%;
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      letter-spacing: 0.5px;
+    }
+
+    li a:hover {
+      color: #7ab6ff;
+    }
+
+  </style>
+</head>
+<body>
+  <a href="../">home</a>
+  <main>
+    <div class="case">
+      <h1>Case Studies</h1>
+      <ul>
+        <li><a href="./nbc/index.html">NBC Universal</a></li>
+        <li><a href="./aws/uc/index.html">Utility Centers: Amazon Web Services (AWS)</a></li>
+        <li><a href="./nbc/design_system/gallery.html">2026 Milan Olympics Design System(TVE)</a></li>
+        <li><a href="./aws/index.html">Amazon Web Services</a></li>
+        <li><a href="./cogstate/lila/index.html">Cogstate Mobile App</a></li>
+        <li><a href="./cogstate/islt/index.html">Improving UX for Cognitive Testing in Clinical Trials</a></li>
+        <li><a href="./etouches/eselect/">eSelect: Academic Call for Papers Tool</a></li>
+        <!-- ´<li><a href="./usatoday/">USA Today Sports – Digital Media Group</a></li> -->
+        
+      </ul>
+    </div>
+    <div class="portfolio">
+      <h1 class="card"></h1>
+    </div>
+  </main>
+</body>
+</html>
