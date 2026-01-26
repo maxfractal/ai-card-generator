@@ -58,7 +58,8 @@
     /* Card look (gradient, rounded, shadow) */
     .cardish{
       background: linear-gradient(145deg, var(--card-1), var(--card-2));
-      border-radius:16px;
+      border:1px solid rgb(58, 64, 74);
+      border-radius:12px;
       box-shadow: 0 2px 6px rgba(0,0,0,.5);
       padding:1.25rem;
       transition: transform .25s ease, box-shadow .25s ease;
@@ -66,6 +67,7 @@
     .cardish:hover{
       transform: translateY(-4px);
       box-shadow: 0 8px 18px rgba(0,0,0,.7), 0 0 12px rgba(64,128,255,.25);
+      border: 2px solid rgba(255,128,255,.25);
     }
 
     /* Section headers as subtle separators */
@@ -134,10 +136,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="container-narrow">
     <!-- Header -->
     <header class="stack">
-      <h1><a href="../xris_net_new_homepage_inspired_by_johnyvino.html">Christopher Parsell</a></h1>
+      <h1><a href="../xris.html">Christopher Parsell</a></h1>
       <div class="eyebrow">Senior Product UX Manager • AI-Enhanced Design & Innovation</div>
     </header>
-
+    <div class="nav">
+      <a href="../portfolio/index.html">Portfolio</a>|
+      <a href="../index.html">Home</a>
+      
+    </div>
     <!-- Bio / Summary -->
     <section class="cardish lead stack-lg" aria-labelledby="about">
       <h2 id="about">About</h2>
